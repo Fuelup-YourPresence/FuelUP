@@ -1,0 +1,46 @@
+.root {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .title {
+    padding-top: 40px;
+    color: #153240;
+    text-align: left;
+    width:100%;
+  }
+  
+  .subtitle {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #153240;
+    width: 70%;
+    text-align: left;
+  }
+  
+  .item {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-width: 60rem;
+  }
+  
+  .item1 {
+    padding-top: 20px;
+    padding-bottom: 60px;
+    max-width: 60rem;
+  }
+  .boldtext{
+    color:black;
+    font-weight: 700;
+  }
+  
