@@ -21,11 +21,14 @@ const flagStyle = {
   overflow: "hidden",
 };
 const OnSubmitRedirect = ({ color }) => {
-  // console.log(color);
-  const [phoneNumber, setPhoneNumber] = useState();
-  // console.log(color);
-  const handleOnChange = (value) => {
-    setPhoneNumber(value);
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  const handleSubmit = () => {
+    console.log(data);
   };
   return (
     <div
@@ -60,11 +63,12 @@ const OnSubmitRedirect = ({ color }) => {
                 paddingLeft: "15px",
               }}
               fullWidth
+              onChange={(e) => setData({ ...data, name: e.target.value })}
             />
             <InputBase
               required
               id="email"
-              label=" Email"
+              label="Email"
               type="email"
               placeholder="Email"
               variant="outlined"
@@ -74,6 +78,7 @@ const OnSubmitRedirect = ({ color }) => {
                 paddingLeft: "15px",
               }}
               fullWidth
+              onChange={(e) => setData({ ...data, email: e.target.value })}
             />
             <InputBase
               required
@@ -88,6 +93,7 @@ const OnSubmitRedirect = ({ color }) => {
                 paddingLeft: "15px",
               }}
               fullWidth
+              onChange={(e) => setData({ ...data, phone: e.target.value })}
             />
             <InputBase
               required
@@ -111,6 +117,10 @@ const OnSubmitRedirect = ({ color }) => {
                 "&:hover": {
                   backgroundColor: "white",
                 },
+              }}
+              type="submit"
+              onClick={() => {
+                handleSubmit();
               }}
             >
               <SendIcon sx={{ color: "#153240" }} />

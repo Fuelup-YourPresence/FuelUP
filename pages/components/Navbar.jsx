@@ -39,9 +39,9 @@ const Navbar = () => {
     <div className={classes.navbar}>
       <Box className={classes.navbarsub}>
         <Box className={classes.logo}>
-          <Link href="/homepage" className={classes.link}>
+          <Link href="/" className={classes.link}>
             <Typography variant="h5" color="white">
-              Logo
+              Fuel UP
             </Typography>
           </Link>
         </Box>
