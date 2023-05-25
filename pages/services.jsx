@@ -6,9 +6,13 @@ import Navbar from "@/pages/components/Navbar"
 import Footer from "@/pages/components/Footer"
 import workflowdata from "../data/workflowdata"
 import Layout from "./Layout"
+import Head from "next/head"
 const Services = () => {
   return (
     <div>
+         <Head>
+        <title>Fuel Up | Services</title>
+        </Head>
         <Layout>
         <Hero/>
         <OurServices/>
