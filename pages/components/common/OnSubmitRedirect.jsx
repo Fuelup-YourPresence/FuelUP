@@ -1,15 +1,15 @@
 import { Box, Button, InputBase, Snackbar, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import PhoneInput from "react-phone-number-input";
 import { FlagIcon } from "react-flag-kit";
 import styled from "styled-components";
 // import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
-import dayjs from 'dayjs'
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { MobileDateTimePicker } from '@mui/x-date-pickers/MobileDateTimePicker';
+import dayjs from "dayjs";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { MobileDateTimePicker } from "@mui/x-date-pickers/MobileDateTimePicker";
 import MuiAlert from "@mui/material/Alert";
 
 const phoneInputStyle = {
@@ -43,6 +43,12 @@ const OnSubmitRedirect = ({ color }) => {
     setData({ ...data, datetime: newDateTime.$d });
   };
 
+  const getOneDayAfter = () => {
+    const today = new Date();
+    const tomorrow = new Date(today);
+    return tomorrow.setDate(tomorrow.getDate() + 1);
+  };
+
   const handleSubmit = async () => {
     console.log(data);
     fetch(process.env.NEXT_PUBLIC_GOOGLE_SHEET_API_ENDPOINT, {
@@ -65,8 +71,6 @@ const OnSubmitRedirect = ({ color }) => {
       });
   };
 
-
-
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -86,6 +90,7 @@ const OnSubmitRedirect = ({ color }) => {
           backgroundColor: color,
           padding: "20px",
           borderRadius: "70px",
+          width: "100%",
         }}
       >
         <Stack>
@@ -149,12 +154,19 @@ const OnSubmitRedirect = ({ color }) => {
                 fullWidth
                 onChange={(e) => setData({ ...data, phone: e.target.value })}
               />
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <Stack style={{backgroundColor:'white',width:'100%',borderRadius:'20px'}}>
-            <MobileDateTimePicker defaultValue={dayjs('2022-04-17T15:30')} 
-            onChange={handleDateTimeChange}/>
-            </Stack>
-            </LocalizationProvider>
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <Stack
+                  style={{
+                    backgroundColor: "white",
+                    width: "100%",
+                    borderRadius: "20px",
+                  }}
+                >
+                  <MobileDateTimePicker
+                    onChange={handleDateTimeChange}
+                  />
+                </Stack>
+              </LocalizationProvider>
               <Button
                 sx={{
                   borderRadius: "50%",
