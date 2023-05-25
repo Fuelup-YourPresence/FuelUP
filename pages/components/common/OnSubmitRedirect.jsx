@@ -3,6 +3,7 @@ import { Stack } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import SendIcon from "@mui/icons-material/Send";
 import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 import { FlagIcon } from "react-flag-kit";
 import styled from "styled-components";
 // import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
@@ -119,7 +120,7 @@ const OnSubmitRedirect = ({ color }) => {
                 style={{
                   borderRadius: "20px",
                   backgroundColor: "white",
-                  paddingLeft: "15px",
+                  padding: " 0 15px",
                 }}
                 fullWidth
                 onChange={(e) => setData({ ...data, name: e.target.value })}
@@ -134,12 +135,12 @@ const OnSubmitRedirect = ({ color }) => {
                 style={{
                   borderRadius: "20px",
                   backgroundColor: "white",
-                  paddingLeft: "15px",
+                  padding: " 0 15px",
                 }}
                 fullWidth
                 onChange={(e) => setData({ ...data, email: e.target.value })}
               />
-              <InputBase
+              {/* <InputBase
                 required
                 id="Phone"
                 label="Phone"
@@ -153,7 +154,25 @@ const OnSubmitRedirect = ({ color }) => {
                 }}
                 fullWidth
                 onChange={(e) => setData({ ...data, phone: e.target.value })}
-              />
+              /> */}
+              
+                <PhoneInput
+                  id="phoneInput"
+                  className="phone-input"
+                  international
+                  defaultCountry={"IN"}
+                  limitMaxLength={true}
+                  countryCallingCodeEditable={false}
+                  value={data.phone}
+                  placeholder={"e.g. +91 98374-XXXXX"}
+                  onChange={(value) => setData({ ...data, phone: value })}
+                  style={{
+                    borderRadius: "20px",
+                    backgroundColor: "white",
+                    padding: "0 15px",
+                    border: "none",
+                  }}
+                />
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <Stack
                   style={{
@@ -162,16 +181,14 @@ const OnSubmitRedirect = ({ color }) => {
                     borderRadius: "20px",
                   }}
                 >
-                  <MobileDateTimePicker
-                    onChange={handleDateTimeChange}
-                  />
+                  <MobileDateTimePicker onChange={handleDateTimeChange} />
                 </Stack>
               </LocalizationProvider>
               <Button
                 sx={{
                   borderRadius: "50%",
                   backgroundColor: "#C4F0AB",
-                  height: "50px",
+                  height: "60px",
                   "&:hover": {
                     backgroundColor: "white",
                   },

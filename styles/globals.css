@@ -2,3 +2,23 @@ body{
   padding:0px;
   margin:0px;
 }
+
+.phone-input {
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.phone-input-container:focus-within > .phone-input {
+  border: 1px solid #397ec6;
+}
+
+.phone-input > input {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+}
+
+.phone-input > input:active,
+.phone-input > input:focus {
+  outline: none;
+}
