@@ -39,7 +39,7 @@ const Hero = () => {
     <Stack sx={backg}>
         <Box display='flex' flexDirection='row' alignItems='center' justifyContent='center'  maxWidth='80rem'
   margin='auto'>
-        <Box display='flex' flexDirection='column' sx={{width:'60%',padding:'50px 70px 30px 0px'}}>
+        <Box display='flex' flexDirection='column' sx={{width:'60%',padding:'60px 0px'}}>
             <Box style={boxes}>
             <Typography variant='h3' sx={{color:'white'}}>Creating a seamless online experience for your brand</Typography>
             </Box>

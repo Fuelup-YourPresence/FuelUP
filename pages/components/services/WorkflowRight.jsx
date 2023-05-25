@@ -11,7 +11,7 @@ import {SiProtodotio} from 'react-icons/si'
 const WorkflowRight = ({data,color}) => {
     const colors = (color==="#D9D9D9")?"#C4F0AB":"#153240";
   return (
-    <div>
+    <div style={{display:"flex",justifyContent:'center',alignItems:'center'}}>
     {data&&
     <Box display="flex" flexDirection="row" width="80%" padding='60px 0px'>
     <Box display="flex" flexDirection="column">

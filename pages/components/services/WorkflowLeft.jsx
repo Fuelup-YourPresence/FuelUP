@@ -11,7 +11,7 @@ import Link from 'next/link';
 const WorkflowLeft = ({data,color}) => {
     const colors = (color==="#D9D9D9")?"#C4F0AB":"#153240";
   return (
-    <div>
+    <div style={{display:"flex",justifyContent:'center',alignItems:'center'}}>
     {data&&
     <Box display="flex" flexDirection="row"  padding="60px 0px" width="80%">
        <Box display="flex">

@@ -44,9 +44,9 @@ const Quotes = () => {
         <div style={backg}>
         <Box display='flex' flexDirection='column' justifyContent='space-between' height='100%' width="30%">
             <Box paddingTop="20px" height="50%" display="flex" justifyContent='space-evenly' flexDirection='column'>
-            <Box><Typography variant="h7" sx={{color:'white'}}>Fill up the form and our team will get back to you within 24 Hrs</Typography></Box>
+            <Box><Typography variant="h6" sx={{color:'white'}}>Fill up the form and our team will get back to you within 24 Hrs</Typography></Box>
             <Box display='flex' flexDirection='row'>
-            <Box backgroundColor='#C4F0AB' height='30%' marginRight="7px"><AiOutlineMessage color='#153240'/></Box>
+            <Box backgroundColor='#C4F0AB' height='30px' width= '30px' marginRight="7px" borderRadius='20%' display='flex' alignItems='center' justifyContent='center'><AiOutlineMessage color='#153240' fontSize='1.25rem'/></Box>
             <Box>
                 <Typography variant='h6' sx={{color:'white'}}>&nbsp;Chat to us</Typography>
                 <Typography sx={{color:'white'}}>Our Friendly team is here to help</Typography>
@@ -54,7 +54,7 @@ const Quotes = () => {
             </Box>
             </Box>
             <Box display='flex' flexDirection='row'>
-            <Box backgroundColor='#C4F0AB' height='30%' marginRight="7px"><IoMdCall/></Box>
+            <Box backgroundColor='#C4F0AB' height='30px' width= '30px' marginRight="7px" borderRadius='20%' display='flex' alignItems='center' justifyContent='center'><IoMdCall fontSize='1.25rem'/></Box>
             <Box display='flex' flexDirection='column'>
                 <Typography variant="h6" sx={{color:'white'}}>Call to us</Typography>
                 <Typography sx={{color:'white'}}>Mon - Fri from 10am to 6pm IST</Typography>

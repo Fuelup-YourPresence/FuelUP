@@ -28,14 +28,14 @@ const Footer = () => {
         >
           <Box>
             <Typography variant="h5" className={classes.logo}>
-              LOGO
+              Fuel Up
             </Typography>
             <Typography className={classes.text}>
               We build website that work as hard as you do.
             </Typography>
           </Box>
           <Box className={classes.listItem}>
-            <Typography className={classes.text}>About US</Typography>
+            <Typography className={classes.text}>About Us</Typography>
             <Typography className={classes.text}>Services</Typography>
             <Typography className={classes.text}>Plans</Typography>
           </Box>

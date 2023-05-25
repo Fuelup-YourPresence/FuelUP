@@ -41,7 +41,7 @@ const Navbar = () => {
         <Box className={classes.logo}>
           <Link href="/" className={classes.link}>
             <Typography variant="h5" color="white">
-              Fuel UP
+              Fuel Up
             </Typography>
           </Link>
         </Box>

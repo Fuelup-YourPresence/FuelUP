@@ -5,7 +5,11 @@ import SendIcon from "@mui/icons-material/Send";
 import PhoneInput from "react-phone-number-input";
 import { FlagIcon } from "react-flag-kit";
 import styled from "styled-components";
-
+// import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
+import dayjs from 'dayjs'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { MobileDateTimePicker } from '@mui/x-date-pickers/MobileDateTimePicker';
 const phoneInputStyle = {
   display: "flex",
   alignItems: "center",
@@ -25,8 +29,12 @@ const OnSubmitRedirect = ({ color }) => {
     name: "",
     email: "",
     phone: "",
+    date: "",
   });
-
+  const handleDateTimeChange = (newDateTime) => {
+    const day = newDateTime.day();
+    setData({ ...data, date: newDateTime.$d });
+  };
   const handleSubmit = () => {
     console.log(data);
   };
@@ -95,7 +103,13 @@ const OnSubmitRedirect = ({ color }) => {
               fullWidth
               onChange={(e) => setData({ ...data, phone: e.target.value })}
             />
-            <InputBase
+             <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <Stack style={{backgroundColor:'white',width:'100%',borderRadius:'20px'}}>
+            <MobileDateTimePicker defaultValue={dayjs('2022-04-17T15:30')} 
+            onChange={handleDateTimeChange}/>
+            </Stack>
+            </LocalizationProvider>
+            {/* <InputBase
               required
               id="captcha"
               label="Captcha"
@@ -108,7 +122,7 @@ const OnSubmitRedirect = ({ color }) => {
                 paddingLeft: "15px",
               }}
               fullWidth
-            />
+            /> */}
             <Button
               sx={{
                 borderRadius: "50%",
