@@ -20,12 +20,22 @@
   .logo {
     color: white;
     padding: 12px;
+    display: flex;
+    flex-direction: row;
+  }
+  .logosub{
+    display: flex;
+    flex-direction: row;
   }
   
   /* text styles */
   .text {
     color: white;
+    text-decoration: none;
     padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   /* listItem styles */

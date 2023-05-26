@@ -27,12 +27,24 @@ const flagStyle = {
   borderRadius: "50px",
   overflow: "hidden",
 };
-
+const invalid={
+  borderRadius: "20px",
+  backgroundColor: "white",
+  padding: " 0 15px",
+  border: "2px solid red",
+}
+const valid={
+  borderRadius: "20px",
+  backgroundColor: "white",
+  padding: " 0 15px",
+}
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 const OnSubmitRedirect = ({ color }) => {
   const [open, setOpen] = React.useState(false);
+  const [isvalidname,setIsvalidname] = useState(true);
+  const [isvalidemail,setIsvalidemail] = useState(true);
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -49,9 +61,34 @@ const OnSubmitRedirect = ({ color }) => {
     const tomorrow = new Date(today);
     return tomorrow.setDate(tomorrow.getDate() + 1);
   };
-
+  function nameHandler(e) {
+    const inputValue = e.target.value;
+    const regex = /^[a-zA-Z\s]*$/;
+    if (regex.test(inputValue)) {
+      setData({ ...data, name: inputValue });
+      setIsvalidname(true)
+    }
+    else{
+      setIsvalidname(false);
+    }
+  }
+  function emailHandler(e) {
+    const inputValue = e.target.value;
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regular expression to match a valid email format
+    if (regex.test(inputValue)) {
+      setData({ ...data, email: inputValue });
+      setIsvalidemail(true);
+    }
+    else{
+      setIsvalidemail(false);
+    }
+  }
   const handleSubmit = async () => {
-    console.log(data);
+    // console.log(data);
+    if (data.name === "" ||data.phone === "" || data.email === "" || data.datetime === "" ) {
+      alert("Please fill in all the fields");
+      return;
+    }
     fetch(process.env.NEXT_PUBLIC_GOOGLE_SHEET_API_ENDPOINT, {
       method: "POST",
       headers: {
@@ -117,13 +154,9 @@ const OnSubmitRedirect = ({ color }) => {
                 label="Name"
                 variant="outlined"
                 placeholder="Name"
-                style={{
-                  borderRadius: "20px",
-                  backgroundColor: "white",
-                  padding: " 0 15px",
-                }}
+                style={isvalidname?{...valid}:{...invalid}}
                 fullWidth
-                onChange={(e) => setData({ ...data, name: e.target.value })}
+                onChange={nameHandler}
               />
               <InputBase
                 required
@@ -132,13 +165,9 @@ const OnSubmitRedirect = ({ color }) => {
                 type="email"
                 placeholder="Email"
                 variant="outlined"
-                style={{
-                  borderRadius: "20px",
-                  backgroundColor: "white",
-                  padding: " 0 15px",
-                }}
+                style={isvalidemail?{...valid}:{...invalid}}
                 fullWidth
-                onChange={(e) => setData({ ...data, email: e.target.value })}
+                onChange={emailHandler}
               />
               {/* <InputBase
                 required

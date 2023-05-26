@@ -7,18 +7,25 @@ import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
 import classes from "./Navbar.module.css";
 import { useRouter } from "next/router";
+import Image from "next/image";
 function handleClick() {
   const router = useRouter();
   router.push("/Home");
 }
-
-const useStyles = makeStyles((theme) => ({}));
+const buttonStyle = {
+  backgroundColor: "#C4F0AB",
+  color: "#153240",
+  borderRadius: "18px",
+  padding: "8px 15px",
+  width: "100%",
+};
 
 const Navbar = () => {
   const [drawer, openDrawer] = useState(false);
   const [mobileMenu, openMobileMenu] = useState(true);
   const router = useRouter();
   const currentPage = router.asPath.split("/")[1];
+
   // console.log(currentPage)
   // console.log(currentpage);
   // useEffect(() => {
@@ -38,13 +45,17 @@ const Navbar = () => {
   return (
     <div className={classes.navbar}>
       <Box className={classes.navbarsub}>
+      <Link href="/" className={classes.link}>
         <Box className={classes.logo}>
-          <Link href="/" className={classes.link}>
-            <Typography variant="h5" color="white">
+            <Box style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+            <Image src='/images/Logo/logo1.svg' height={50} width={50}/>
+            
+            <Typography variant="h5" color="white" style={{paddingLeft:'10px'}}>
               Fuel Up
             </Typography>
-          </Link>
+            </Box>
         </Box>
+        </Link>
         {/* {mobileMenu && ( */}
         <Box className={classes.menu}>
           <Link
@@ -78,7 +89,7 @@ const Navbar = () => {
             </Typography>
           </Link>
           <Link href="/plans" className={classes.link}>
-            <Button className={classes.button}>Request a quote</Button>
+          <Button style={buttonStyle}>Request a Quote</Button>
           </Link>
         </Box>
         {/* )} */}
