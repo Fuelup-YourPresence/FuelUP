@@ -14,7 +14,15 @@ const Footer = () => {
   return (
     <div className={classes.footer}>
       <Box className={classes.footersub}>
-        <Box width="80%">
+        <Box
+          sx={(theme) => ({
+            width: "80%",
+
+            [theme.breakpoints.down("md")]: {
+              width: "100%",
+            },
+          })}
+        >
           <OnSubmitRedirect color={"transparent"} />
         </Box>
         <Box
@@ -25,6 +33,13 @@ const Footer = () => {
           justifyContent="space-evenly"
           paddingTop="80px"
           paddingBottom="30px"
+          sx={(theme) => ({
+            [theme.breakpoints.down("md")]: {
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            },
+          })}
         >
           <Box>
             <Box display="flex" flexDirection="row">
@@ -37,40 +52,59 @@ const Footer = () => {
               We build website that work as hard as you do.
             </Typography>
           </Box>
-          <Box className={classes.listItem}>
-            <Link href="/about" style={{ textDecoration: "none" }}>
-              <Typography className={classes.text}>About Us</Typography>
-            </Link>
-            <Link href="/services" style={{ textDecoration: "none" }}>
-              <Typography className={classes.text}>Services</Typography>
-            </Link>
-            <Link href="/plans" style={{ textDecoration: "none" }}>
-              <Typography className={classes.text}>Plans</Typography>
-            </Link>
-          </Box>
-          <Box className={classes.listItem}>
-            <Link
-              href="/terms-and-conditions"
-              className={classes.link}
-              style={{
-                textDecoration: "none",
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              gap: "3rem",
+            }}
+          >
+            <Box
+              className={classes.listItem}
+              sx={{
+                alignItems: "flex-start",
               }}
             >
-              <Typography className={classes.text}>
-                Terms & Conditions
-              </Typography>
-            </Link>
-            <Link
-              href="/privacy-policy"
-              className={classes.link}
-              style={{
-                textDecoration: "none",
+              <Link href="/about" style={{ textDecoration: "none" }}>
+                <Typography className={classes.text}>About Us</Typography>
+              </Link>
+              <Link href="/services" style={{ textDecoration: "none" }}>
+                <Typography className={classes.text}>Services</Typography>
+              </Link>
+              <Link href="/plans" style={{ textDecoration: "none" }}>
+                <Typography className={classes.text}>Plans</Typography>
+              </Link>
+            </Box>
+            <Box
+              className={classes.listItem}
+              sx={{
+                alignItems: "flex-start",
               }}
             >
-              <Typography className={classes.text}>Privacy Policy</Typography>
-            </Link>
+              <Link
+                href="/terms-and-conditions"
+                className={classes.link}
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                <Typography className={classes.text}>
+                  Terms & Conditions
+                </Typography>
+              </Link>
+              <Link
+                href="/privacy-policy"
+                className={classes.link}
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                <Typography className={classes.text}>Privacy Policy</Typography>
+              </Link>
 
-            <Typography className={classes.text}>Cookie Policy</Typography>
+              <Typography className={classes.text}>Cookie Policy</Typography>
+            </Box>
           </Box>
           <Box className={classes.listItem}>
             <Typography className={classes.text}>

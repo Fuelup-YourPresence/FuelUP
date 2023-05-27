@@ -6,9 +6,7 @@ const Ourservices = () => {
   const box = {
     padding: "20px",
   };
-  const box1 = {
-    width: "80%",
-  };
+
   const heading = {
     display: "flex",
     flexDirection: "row",
@@ -26,23 +24,44 @@ const Ourservices = () => {
           margin: "auto",
         }}
       >
-        <div style={{ ...heading, paddingTop: "40px" }}>
+        <Box
+          sx={(theme) => ({
+            ...heading,
+            padding: "40px 20px",
+            [theme.breakpoints.down("md")]: {
+              flexDirection: "column",
+            },
+          })}
+        >
           <Typography
-            width="48%"
             variant="h3"
             fontWeight="700"
             color="rgba(21, 50, 64, 1)"
+            sx={(theme) => ({
+              [theme.breakpoints.down("md")]: {
+                fontSize: "2rem",
+                paddingBottom: "30px",
+              },
+            })}
           >
             We build websites that work as hard as you do.
           </Typography>
-          <Typography width="48%" variant="body1" color="rgba(7, 17, 31, 1)">
+          <Typography variant="body1" color="rgba(7, 17, 31, 1)">
             At our company, we provide a range of services that are tailored to
             meet the unique needs of our clients. Our team of experts
             specializes in creating custom websites which are highly functional
             and optimized for performance.
           </Typography>
-        </div>
-        <Box style={box1}>
+        </Box>
+        <Box
+          sx={(theme) => ({
+            width: "80%",
+
+            [theme.breakpoints.down("md")]: {
+              width: "100%",
+            },
+          })}
+        >
           <div style={box}>
             <Left data={ourDomains[0]} />
           </div>

@@ -1,116 +1,134 @@
 .root {
-    border: 2px solid grey;
-    border-radius: 12px;
-    }
-    
-    .box1 {
-    display: flex;
+  border: 2px solid grey;
+  border-radius: 12px;
+}
+
+.box1 {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 100%;
+  align-items: center;
+}
+
+.box2 {
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.borderbox {
+  border: 2px solid grey;
+  display: flex;
+}
+
+.brushBox {
+  width: 44px;
+  height: 44px;
+  background-color: #c4f0ab;
+  color: #153240;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.titlebox {
+  display: flex;
+}
+
+.contentBox {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.title {
+  font-weight: 700;
+  padding-top: 10px;
+  color: rgba(21, 50, 64, 1);
+}
+
+.nameBox {
+  /* padding: 10px; */
+}
+
+.imageBox {
+  justify-content: flex-end;
+  width: 100%;
+  display: flex;
+  margin-right: 35px;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  margin-right: 35px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.data {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 80%;
+  color: #c4f0ab;
+}
+
+.socialsBox {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+
+.socialIcon {
+  color: #153240;
+  font-size: 20px;
+}
+
+.descr {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+.boxes {
+  margin: 0px;
+  padding: 0px;
+  background-color: #153240;
+  height: 100%;
+}
+.socialicons {
+  background-color: #c4f0ab;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+/* media query */
+@media screen and (max-width: 768px) {
+  .container {
     flex-direction: column;
-    background-color: white;
-    height: 100%;
-    align-items: center;
-    }
-    
-    .box2 {
-    padding: 10px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    }
-    
-    .borderbox {
-    border: 2px solid grey;
-    display: flex;
-    }
-    
-    .brushBox {
-    width: 44px;
-    height: 44px;
-    background-color: #C4F0AB;
-    color: #153240;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    margin: 5px;
-    }
-    
-    .titlebox {
-    display: flex;
-    }
-    
-    .contentBox {
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    }
-    
-    .title {
-    font-weight: 700;
-    padding-top: 10px;
-    color:rgba(21, 50, 64, 1);
-    }
-    
-    .nameBox {
-    /* padding: 10px; */
-    }
-    
-    .imageBox {
-    justify-content: flex-end;
-    width: 100%;
-    display: flex;
-    margin-right: 35px;
-    }
-    
-    .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    }
-    
-    .data {
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 80%;
-    color: #C4F0AB;
-    }
-    
-    .socialsBox {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    }
-    
-    .socialIcon {
-    color: #153240;
-    font-size: 20px;
-    }
-    
-    .descr {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight:400 ;
-    }
-    
-    .boxes {
-    margin: 0px;
-    padding: 0px;
-    background-color: #153240;
-    height: 100%;
-    }
-    .socialicons{
-        background-color: #C4F0AB;
-        width:35px;
-        height:35px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
-        margin-left: 10px;
-    }
+  }
+
+  .image {
+    margin-right: 0;
+  }
+}

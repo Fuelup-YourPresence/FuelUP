@@ -49,9 +49,13 @@
   border-left: 1px dotted black;
   flex-basis: 22%;
 }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 768px) {
   .model {
-    flex-basis: 40% !important;
+    flex-basis: 90% !important;
     margin-bottom: 20px;
+  }
+
+  .subTitle {
+    width: 90%;
   }
 }

@@ -16,18 +16,16 @@ const GetEstimate = () => {
       <div className={classes.container}>
         <Box className={classes.contentContainer}>
           <Box className={classes.contentsubContainer}>
-            <div>
-              <Typography className={classes.title}>
-                Get our services at very affordable prices
-              </Typography>
-            </div>
-            <div>
-              <Typography className={classes.description}>
-                Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
-                dui. Vestrae; Donec velit neque, auctor sit amet aliquam vel,
-                ullamcorper sit amet ligula.
-              </Typography>
-            </div>
+            <Typography className={classes.title}>
+              Get our services at very affordable prices
+            </Typography>
+
+            <Typography className={classes.description}>
+              Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
+              dui. Vestrae; Donec velit neque, auctor sit amet aliquam vel,
+              ullamcorper sit amet ligula.
+            </Typography>
+
             <div style={{ paddingTop: "20px" }}>
               <Link href="/plans">
                 <Button style={buttonStyle}>Request a Quote</Button>

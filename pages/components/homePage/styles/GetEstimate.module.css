@@ -83,3 +83,26 @@
 .button:hover {
   background-color: white;
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .quoteContainer {
+    margin-left: 0;
+  }
+
+  .contentContainer {
+    width: 100%;
+  }
+
+  .title {
+    padding-top: 16rem;
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}

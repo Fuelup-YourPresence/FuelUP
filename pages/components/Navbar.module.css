@@ -9,6 +9,8 @@
 .navbarsub {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  height: 100%;
   justify-content: space-between;
   align-items: center;
   max-width: 100rem;
@@ -16,7 +18,7 @@
 }
 .logo {
   padding: 10px;
-  margin-left: 40px;
+  /* margin-left: 40px; */
 }
 .link {
   text-decoration: none;

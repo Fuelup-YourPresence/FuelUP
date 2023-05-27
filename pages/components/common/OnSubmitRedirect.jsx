@@ -1,17 +1,14 @@
+import SendIcon from "@mui/icons-material/Send";
 import { Box, Button, InputBase, Snackbar, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import React, { useEffect, useState } from "react";
-import SendIcon from "@mui/icons-material/Send";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import { FlagIcon } from "react-flag-kit";
-import styled from "styled-components";
 // import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
-import dayjs from "dayjs";
+import MuiAlert from "@mui/material/Alert";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { MobileDateTimePicker } from "@mui/x-date-pickers/MobileDateTimePicker";
-import MuiAlert from "@mui/material/Alert";
 
 const phoneInputStyle = {
   display: "flex",
@@ -27,30 +24,44 @@ const flagStyle = {
   borderRadius: "50px",
   overflow: "hidden",
 };
-const invalid={
+const invalid = {
   borderRadius: "20px",
   backgroundColor: "white",
   padding: " 0 15px",
   border: "2px solid red",
-}
-const valid={
+};
+const valid = {
   borderRadius: "20px",
   backgroundColor: "white",
   padding: " 0 15px",
-}
+};
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 const OnSubmitRedirect = ({ color }) => {
+  const [mobileMenu, openMobileMenu] = useState(false);
   const [open, setOpen] = React.useState(false);
-  const [isvalidname,setIsvalidname] = useState(true);
-  const [isvalidemail,setIsvalidemail] = useState(true);
+  const [isvalidname, setIsvalidname] = useState(true);
+  const [isvalidemail, setIsvalidemail] = useState(true);
   const [data, setData] = useState({
     name: "",
     email: "",
     phone: "",
     datetime: "",
   });
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth <= 768) {
+        openMobileMenu(true);
+      } else {
+        openMobileMenu(false);
+      }
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   const handleDateTimeChange = (newDateTime) => {
     const day = newDateTime.day();
     setData({ ...data, datetime: newDateTime.$d });
@@ -66,9 +77,8 @@ const OnSubmitRedirect = ({ color }) => {
     const regex = /^[a-zA-Z\s]*$/;
     if (regex.test(inputValue)) {
       setData({ ...data, name: inputValue });
-      setIsvalidname(true)
-    }
-    else{
+      setIsvalidname(true);
+    } else {
       setIsvalidname(false);
     }
   }
@@ -78,14 +88,18 @@ const OnSubmitRedirect = ({ color }) => {
     if (regex.test(inputValue)) {
       setData({ ...data, email: inputValue });
       setIsvalidemail(true);
-    }
-    else{
+    } else {
       setIsvalidemail(false);
     }
   }
   const handleSubmit = async () => {
     // console.log(data);
-    if (data.name === "" ||data.phone === "" || data.email === "" || data.datetime === "" ) {
+    if (
+      data.name === "" ||
+      data.phone === "" ||
+      data.email === "" ||
+      data.datetime === ""
+    ) {
       alert("Please fill in all the fields");
       return;
     }
@@ -126,20 +140,31 @@ const OnSubmitRedirect = ({ color }) => {
       <div
         style={{
           backgroundColor: color,
-          padding: "20px",
-          borderRadius: "70px",
+          // padding: "20px",
+          borderRadius: "50px",
           width: "100%",
         }}
       >
         <Stack>
           <div style={{ textAlign: "center" }}>
-            <Typography variant="h6" style={{ padding: "5px", color: "white" }}>
+            <Typography
+              variant="h6"
+              sx={(theme) => ({
+                padding: "5px",
+                color: "white",
+                padding: "40px 10px 10px 10px",
+
+                [theme.breakpoints.down("md")]: {
+                  fontSize: "1.1rem",
+                },
+              })}
+            >
               Schedule a 15 min call for quick discussion about our services
             </Typography>
           </div>
           <Box padding="15px">
             <Stack
-              direction="row"
+              direction={{ xs: "column", sm: "row" }}
               spacing={2}
               justifyContent="space-around"
               sx={{
@@ -154,7 +179,10 @@ const OnSubmitRedirect = ({ color }) => {
                 label="Name"
                 variant="outlined"
                 placeholder="Name"
-                style={isvalidname?{...valid}:{...invalid}}
+                style={isvalidname ? { ...valid } : { ...invalid }}
+                sx={{
+                  minHeight: "60px",
+                }}
                 fullWidth
                 onChange={nameHandler}
               />
@@ -165,7 +193,10 @@ const OnSubmitRedirect = ({ color }) => {
                 type="email"
                 placeholder="Email"
                 variant="outlined"
-                style={isvalidemail?{...valid}:{...invalid}}
+                sx={{
+                  minHeight: "60px",
+                }}
+                style={isvalidemail ? { ...valid } : { ...invalid }}
                 fullWidth
                 onChange={emailHandler}
               />
@@ -184,24 +215,25 @@ const OnSubmitRedirect = ({ color }) => {
                 fullWidth
                 onChange={(e) => setData({ ...data, phone: e.target.value })}
               /> */}
-              
-                <PhoneInput
-                  id="phoneInput"
-                  className="phone-input"
-                  international
-                  defaultCountry={"IN"}
-                  limitMaxLength={true}
-                  countryCallingCodeEditable={false}
-                  value={data.phone}
-                  placeholder={"e.g. +91 98374-XXXXX"}
-                  onChange={(value) => setData({ ...data, phone: value })}
-                  style={{
-                    borderRadius: "20px",
-                    backgroundColor: "white",
-                    padding: "0 15px",
-                    border: "none",
-                  }}
-                />
+
+              <PhoneInput
+                id="phoneInput"
+                className="phone-input"
+                international
+                defaultCountry={"IN"}
+                limitMaxLength={true}
+                countryCallingCodeEditable={false}
+                value={data.phone}
+                placeholder={"e.g. +91 98374-XXXXX"}
+                onChange={(value) => setData({ ...data, phone: value })}
+                style={{
+                  borderRadius: "20px",
+                  backgroundColor: "white",
+                  padding: "0 15px",
+                  border: "none",
+                  minHeight: "60px",
+                }}
+              />
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <Stack
                   style={{
@@ -213,22 +245,43 @@ const OnSubmitRedirect = ({ color }) => {
                   <MobileDateTimePicker onChange={handleDateTimeChange} />
                 </Stack>
               </LocalizationProvider>
-              <Button
-                sx={{
-                  borderRadius: "50%",
-                  backgroundColor: "#C4F0AB",
-                  height: "60px",
-                  "&:hover": {
-                    backgroundColor: "white",
-                  },
-                }}
-                type="submit"
-                onClick={() => {
-                  handleSubmit();
-                }}
-              >
-                <SendIcon sx={{ color: "#153240" }} />
-              </Button>
+              {mobileMenu ? (
+                <Button
+                  sx={{
+                    borderRadius: "1rem",
+                    backgroundColor: "#C4F0AB",
+                    height: "50px",
+                    fontSize: "1.1rem",
+                    color: "#153240",
+                    "&:hover": {
+                      backgroundColor: "white",
+                    },
+                  }}
+                  type="submit"
+                  onClick={() => {
+                    handleSubmit();
+                  }}
+                >
+                  Submit &nbsp; <SendIcon sx={{ color: "#153240" }} />
+                </Button>
+              ) : (
+                <Button
+                  sx={{
+                    borderRadius: "50%",
+                    backgroundColor: "#C4F0AB",
+                    height: "60px",
+                    "&:hover": {
+                      backgroundColor: "white",
+                    },
+                  }}
+                  type="submit"
+                  onClick={() => {
+                    handleSubmit();
+                  }}
+                >
+                  <SendIcon sx={{ color: "#153240" }} />
+                </Button>
+              )}
             </Stack>
           </Box>
         </Stack>

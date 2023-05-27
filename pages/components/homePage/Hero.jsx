@@ -31,7 +31,7 @@ const Hero = () => {
     flexDirection: "column",
   };
   const imagesty = {
-    width: "35%",
+    width: "40%",
   };
   const color = "#0C2937";
   return (
@@ -43,16 +43,37 @@ const Hero = () => {
         justifyContent="center"
         maxWidth="80rem"
         margin="auto"
+        sx={(theme) => ({
+          [theme.breakpoints.down("md")]: {
+            flexDirection: "column",
+          },
+        })}
       >
         <Box
           display="flex"
           flexDirection="column"
-          sx={{ width: "60%", padding: "60px 0px", gap: "1rem" }}
+          sx={(theme) => ({
+            width: "60%",
+            padding: "60px 0px",
+            gap: "1rem",
+            [theme.breakpoints.down("md")]: {
+              width: "100%",
+              padding: "50px 10px",
+              textAlign: "center",
+            },
+          })}
         >
           <Box style={boxes}>
             <Typography
               variant="h1"
-              sx={{ color: "white", fontSize: "3rem", fontWeight: 500 }}
+              sx={(theme) => ({
+                color: "white",
+                fontSize: "3rem",
+                fontWeight: 500,
+                [theme.breakpoints.down("md")]: {
+                  fontSize: "2rem",
+                },
+              })}
             >
               Creating a seamless online experience for your brand
             </Typography>
@@ -77,7 +98,7 @@ const Hero = () => {
           style={imagesty}
         />
       </Box>
-      <Box padding="0px 0px 150px 0px" maxWidth="100rem" margin="auto">
+      <Box padding="10px 10px 150px 10px" maxWidth="100rem" margin="auto">
         <OnSubmitRedirect color={color} />
       </Box>
     </Stack>
