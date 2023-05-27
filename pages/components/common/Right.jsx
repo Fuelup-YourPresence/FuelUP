@@ -12,7 +12,11 @@ const Right = ({ data }) => {
         <Box className={classes.container}>
           <Box className={classes.boxes}>
             <div className={classes.imageBox}>
-              <img src={data.image} alt="My Image" className={classes.image} />
+              <img
+                src={data.image}
+                alt="My Image"
+                style={{ maxWidth: "100%", maxHeight: "100%" }}
+              />
             </div>
           </Box>
           <Box className={classes.box1}>
@@ -51,23 +55,22 @@ const Right = ({ data }) => {
                       <Box className={classes.socialsBox}>
                         <Box className={classes.socialicons}>
                           <Link href={data.socials[0]}>
-                            <CiLinkedin color="#153240" fontSize="20px" />
+                            <CiLinkedin color="#153240" />
                           </Link>
                         </Box>
                         <Box className={classes.socialicons}>
                           <Link href={data.socials[1]}>
-                            <CiTwitter color="#153240" fontSize="20px" />
+                            <CiTwitter color="#153240" />
                           </Link>
                         </Box>
                         <Box className={classes.socialicons}>
                           <Link href={data.socials[2]}>
-                            <CiInstagram color="#153240" fontSize="20px" />
+                            <CiInstagram color="#153240" />
                           </Link>
                         </Box>
                         <Box className={classes.socialicons}>
                           <Link href={data.socials[0]}>
-                            {" "}
-                            <FaWhatsapp color="#153240" fontSize="20px" />
+                            <FaWhatsapp color="#153240" />
                           </Link>
                         </Box>
                       </Box>

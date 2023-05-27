@@ -16,7 +16,7 @@ const Footer = () => {
       <Box className={classes.footersub}>
         <Box
           sx={(theme) => ({
-            width: "80%",
+            // width: "80%",
 
             [theme.breakpoints.down("md")]: {
               width: "100%",
@@ -107,36 +107,41 @@ const Footer = () => {
             </Box>
           </Box>
           <Box className={classes.listItem}>
-            <Typography className={classes.text}>
-              <GrMail style={{ fontSize: "30px", paddingRight: "10px" }} />
-              <span />
-              Mail to us :-
-            </Typography>
-            <Typography
-              component="a"
-              href={`mailto:${"fuelup.yourpresence@gmail.com"}`}
-              className={classes.text}
-              style={{ textDecoration: "none" }}
-            >
-              fuelup.yourpresence@gmail.com
-            </Typography>
-            <Box
-              display="flex"
-              flexDirection="row"
-              alignItems="center"
-              justifyContent="space-evenly"
-            >
+            <Box className={classes.mail}>
+              <Typography className={classes.textmail}>
+                <GrMail style={{ fontSize: "2rem", paddingRight: "10px" }} />
+                <span />
+                Mail to us :-
+              </Typography>
+              <Typography
+                component="a"
+                href={`mailto:${"fuelup.yourpresence@gmail.com"}`}
+                className={classes.text}
+                style={{ textDecoration: "none" }}
+              >
+                fuelup.yourpresence@gmail.com
+              </Typography>
+            </Box>
+            <Box className={classes.socialbox}>
               <Link href="/">
-                <CiLinkedin color="#C4F0AB" fontSize="20px" />
+                <Box className={classes.socials}>
+                  <CiLinkedin />
+                </Box>
               </Link>
               <Link href="/">
-                <CiTwitter color="#C4F0AB" fontSize="20px" />
+                <Box className={classes.socials}>
+                  <CiTwitter />
+                </Box>
               </Link>
               <Link href="/">
-                <CiInstagram color="#C4F0AB" fontSize="20px" />
+                <Box className={classes.socials}>
+                  <CiInstagram />
+                </Box>
               </Link>
               <Link href="/">
-                <FaWhatsapp color="#C4F0AB" fontSize="20px" />
+                <Box className={classes.socials}>
+                  <FaWhatsapp />
+                </Box>
               </Link>
             </Box>
           </Box>

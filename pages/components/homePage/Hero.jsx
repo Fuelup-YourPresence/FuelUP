@@ -87,7 +87,7 @@ const Hero = () => {
             </Typography>
           </Box>
           <Box style={boxes}>
-            <Link href="/plans">
+            <Link href="/contact">
               <Button style={buttonStyle}>Request a Quote</Button>
             </Link>
           </Box>

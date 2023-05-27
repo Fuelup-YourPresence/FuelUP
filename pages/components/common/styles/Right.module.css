@@ -119,6 +119,11 @@
   align-items: center;
   border-radius: 50%;
   margin-left: 10px;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+.socialicons:hover {
+  background-color: white;
 }
 .socialicondiv {
   width: 45%;

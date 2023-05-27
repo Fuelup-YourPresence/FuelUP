@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
   margin: auto;
-  max-width: 100rem;
+  width: 100%;
 }
 
 /* logo styles */
@@ -34,12 +34,39 @@
   text-decoration: none;
   padding: 12px;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
-
+.textmail {
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
 /* listItem styles */
 .listItem {
   display: flex;
   flex-direction: column;
+}
+.socials:hover {
+  border-radius: 50%;
+  background-color: white;
+  color: #153240;
+}
+
+.socials {
+  height: 30px;
+  width: 30px;
+  color: #c4f0ab;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.socialbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }

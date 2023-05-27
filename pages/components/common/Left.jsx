@@ -24,7 +24,9 @@ const Left = ({ data }) => {
                   </Box>
                   {data.name && (
                     <Box className={classes.descr}>
-                      <Typography color="#07111F">{data.name}</Typography>
+                      <Typography color="#07111F" style={{ width: "80%" }}>
+                        {data.name}
+                      </Typography>
                     </Box>
                   )}
                   <Box className={classes.descr}>
@@ -43,28 +45,35 @@ const Left = ({ data }) => {
                     <Box className={classes.descr}>
                       <Box className={classes.socialsBox}>
                         <Box className={classes.socialicons}>
-                          <Link href={data.socials[0]}>
-                            <CiLinkedin
-                              color="#153240"
-                              fontSize="20px"
-                              sx={{ fontWeight: "700" }}
-                            />
+                          <Link
+                            href={data.socials[0]}
+                            style={{ textDecoration: "none" }}
+                          >
+                            <CiLinkedin className={classes.social} />
                           </Link>
                         </Box>
                         <Box className={classes.socialicons}>
-                          <Link href={data.socials[1]}>
-                            <CiTwitter color="#153240" fontSize="20px" />
+                          <Link
+                            href={data.socials[1]}
+                            style={{ textDecoration: "none" }}
+                          >
+                            <CiTwitter className={classes.social} />
                           </Link>
                         </Box>
                         <Box className={classes.socialicons}>
-                          <Link href={data.socials[2]}>
-                            <CiInstagram color="#153240" fontSize="20px" />
+                          <Link
+                            href={data.socials[2]}
+                            style={{ textDecoration: "none" }}
+                          >
+                            <CiInstagram className={classes.social} />
                           </Link>
                         </Box>
                         <Box className={classes.socialicons}>
-                          <Link href={data.socials[0]}>
-                            {" "}
-                            <FaWhatsapp color="#153240" fontSize="20px" />
+                          <Link
+                            href={data.socials[0]}
+                            style={{ textDecoration: "none" }}
+                          >
+                            <FaWhatsapp className={classes.social} />
                           </Link>
                         </Box>
                       </Box>

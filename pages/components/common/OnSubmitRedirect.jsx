@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 // import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
-import MuiAlert from "@mui/material/Alert";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { MobileDateTimePicker } from "@mui/x-date-pickers/MobileDateTimePicker";
@@ -35,6 +34,16 @@ const valid = {
   backgroundColor: "white",
   padding: " 0 15px",
 };
+const validphone = {
+  borderRadius: "20px",
+  backgroundColor: "white",
+  padding: "0 15px",
+  border: "none",
+};
+const validdate = {
+  backgroundColor: "white",
+  borderRadius: "5px",
+};
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -43,6 +52,8 @@ const OnSubmitRedirect = ({ color }) => {
   const [open, setOpen] = React.useState(false);
   const [isvalidname, setIsvalidname] = useState(true);
   const [isvalidemail, setIsvalidemail] = useState(true);
+  const [isvalidphone, setIsvalidphone] = useState(true);
+  const [isvaliddate, setIsvaliddate] = useState(true);
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -64,6 +75,7 @@ const OnSubmitRedirect = ({ color }) => {
   }, []);
   const handleDateTimeChange = (newDateTime) => {
     const day = newDateTime.day();
+    setIsvaliddate(true);
     setData({ ...data, datetime: newDateTime.$d });
   };
 
@@ -92,15 +104,29 @@ const OnSubmitRedirect = ({ color }) => {
       setIsvalidemail(false);
     }
   }
+  function phoneHandler(value) {
+    setIsvalidphone(true);
+    setData({ ...data, phone: value });
+  }
   const handleSubmit = async () => {
-    // console.log(data);
     if (
-      data.name === "" ||
+      data.time === "" ||
       data.phone === "" ||
       data.email === "" ||
-      data.datetime === ""
+      data.name === ""
     ) {
-      alert("Please fill in all the fields");
+      if (data.name === "") {
+        setIsvalidname(false);
+      }
+      if (data.phone === "") {
+        setIsvalidphone(false);
+      }
+      if (data.email === "") {
+        setIsvalidemail(false);
+      }
+      if (data.datetime === "") {
+        setIsvaliddate(false);
+      }
       return;
     }
     fetch(process.env.NEXT_PUBLIC_GOOGLE_SHEET_API_ENDPOINT, {
@@ -140,9 +166,9 @@ const OnSubmitRedirect = ({ color }) => {
       <div
         style={{
           backgroundColor: color,
-          // padding: "20px",
-          borderRadius: "50px",
-          width: "100%",
+          padding: "20px",
+          borderRadius: "70px",
+          maxWidth: "55rem",
         }}
       >
         <Stack>
@@ -225,24 +251,28 @@ const OnSubmitRedirect = ({ color }) => {
                 countryCallingCodeEditable={false}
                 value={data.phone}
                 placeholder={"e.g. +91 98374-XXXXX"}
-                onChange={(value) => setData({ ...data, phone: value })}
-                style={{
-                  borderRadius: "20px",
-                  backgroundColor: "white",
-                  padding: "0 15px",
-                  border: "none",
-                  minHeight: "60px",
-                }}
+                onChange={phoneHandler}
+                style={
+                  isvalidphone
+                    ? { ...validphone }
+                    : { ...validphone, border: "2px solid red" }
+                }
               />
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <Stack
                   style={{
-                    backgroundColor: "white",
                     width: "100%",
-                    borderRadius: "20px",
                   }}
                 >
-                  <MobileDateTimePicker onChange={handleDateTimeChange} />
+                  <MobileDateTimePicker
+                    autoFocus={false}
+                    sx={
+                      isvaliddate
+                        ? { ...validdate }
+                        : { ...validdate, border: "2px solid red" }
+                    }
+                    onChange={handleDateTimeChange}
+                  />
                 </Stack>
               </LocalizationProvider>
               {mobileMenu ? (
@@ -268,10 +298,11 @@ const OnSubmitRedirect = ({ color }) => {
                 <Button
                   sx={{
                     borderRadius: "50%",
-                    backgroundColor: "#C4F0AB",
+                    backgroundColor: "white",
                     height: "60px",
                     "&:hover": {
-                      backgroundColor: "white",
+                      backgroundColor: "#C4F0AB",
+                      color: "#153240",
                     },
                   }}
                   type="submit"
