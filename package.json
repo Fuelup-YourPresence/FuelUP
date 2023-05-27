@@ -17,6 +17,7 @@
     "@mui/x-date-pickers": "^6.5.0",
     "dayjs": "^1.11.7",
     "next": "13.2.4",
+    "nextjs-progressbar": "^0.0.16",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-flag-kit": "^1.1.1",
