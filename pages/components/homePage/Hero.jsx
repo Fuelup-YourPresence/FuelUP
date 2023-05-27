@@ -1,20 +1,19 @@
-import React from "react";
-import { Box, display, Stack } from "@mui/system";
-import { Button, CardMedia, Typography } from "@mui/material";
-import Image from "next/image";
-import OnSubmitRedirect from "../common/OnSubmitRedirect";
+import { Button, Typography } from "@mui/material";
+import { Box, Stack } from "@mui/system";
 import Link from "next/link";
+import OnSubmitRedirect from "../common/OnSubmitRedirect";
 const Hero = () => {
   // console.log(OurDomains)
   const buttonStyle = {
     backgroundColor: "#C4F0AB",
     color: "#153240",
-    borderRadius: "18px",
-    padding: "8px 15px",
-    width: "40%",
+    borderRadius: "0.35rem",
+    padding: "8px 30px",
+    // width: "40%",
   };
   const boxes = {
     padding: "10px 0px",
+    paddingLeft: "20px",
   };
   const styles = {
     boxes: {
@@ -48,15 +47,18 @@ const Hero = () => {
         <Box
           display="flex"
           flexDirection="column"
-          sx={{ width: "60%", padding: "60px 0px" }}
+          sx={{ width: "60%", padding: "60px 0px", gap: "1rem" }}
         >
           <Box style={boxes}>
-            <Typography variant="h3" sx={{ color: "white" }}>
+            <Typography
+              variant="h1"
+              sx={{ color: "white", fontSize: "3rem", fontWeight: 500 }}
+            >
               Creating a seamless online experience for your brand
             </Typography>
           </Box>
           <Box style={boxes}>
-            <Typography variant="h6" sx={{ color: "white" }}>
+            <Typography variant="body1" sx={{ color: "white" }}>
               We are passionate about crafting exceptional digital experiences.
               We specialize in creating custom websites that are both visually
               stunning and highly functional, designed to provide the best
@@ -75,7 +77,7 @@ const Hero = () => {
           style={imagesty}
         />
       </Box>
-      <Box padding="0px 0px 150px 0px" maxWidth="100rem" margin="auto" >
+      <Box padding="0px 0px 150px 0px" maxWidth="100rem" margin="auto">
         <OnSubmitRedirect color={color} />
       </Box>
     </Stack>

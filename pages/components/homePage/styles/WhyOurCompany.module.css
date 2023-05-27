@@ -1,57 +1,57 @@
 /* root styles */
 .root {
-    height: 100%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* container styles */
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* container styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 80rem;
+  padding: 20px 0;
+  margin: auto;
+}
+
+@media (max-width: 1440px) {
   .container {
-    display: flex;
-    flex-direction: column;
-    max-width: 100rem;
-    padding: 20px;
-    margin: auto;
+    padding: 40px 0px;
   }
-  
-  @media (max-width: 1440px) {
-    .container {
-      padding:40px 0px;
-    }
-  }
-  
-  /* title styles */
-  .title {
-    padding: 20px;
-    font-weight: 700;
-  }
-  
-  /* subTitle styles */
-  .subTitle {
-    padding: 20px;
-    width: 50%;
-  }
-  
-  /* modelsContainer styles */
-  .modelsContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  /* model styles */
+}
+
+/* title styles */
+.title {
+  padding: 20px;
+  font-weight: 700;
+}
+
+/* subTitle styles */
+.subTitle {
+  padding: 20px;
+  width: 50%;
+}
+
+/* modelsContainer styles */
+.modelsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* model styles */
+.model {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px dotted black;
+  flex-basis: 22%;
+}
+@media screen and (max-width: 1100px) {
   .model {
-    display: flex;
-    flex-direction: column;
-    border-left: 1px dotted black;
-    flex-basis: 20%;
+    flex-basis: 40% !important;
+    margin-bottom: 20px;
   }
-  @media screen and (max-width: 1100px) {
-    .model {
-      flex-basis: 40% !important;
-      margin-bottom: 20px;
-    }
-  }
+}

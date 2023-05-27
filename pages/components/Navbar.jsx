@@ -1,13 +1,11 @@
 "use client";
 import { Button, Typography } from "@mui/material";
-import { Box, Stack } from "@mui/system";
-import React, { useEffect, useState } from "react";
-import { makeStyles } from "@mui/styles";
-import Link from "next/link";
-import MenuIcon from "@mui/icons-material/Menu";
-import classes from "./Navbar.module.css";
-import { useRouter } from "next/router";
+import { Box } from "@mui/system";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import classes from "./Navbar.module.css";
 function handleClick() {
   const router = useRouter();
   router.push("/Home");
@@ -15,7 +13,7 @@ function handleClick() {
 const buttonStyle = {
   backgroundColor: "#C4F0AB",
   color: "#153240",
-  borderRadius: "18px",
+  borderRadius: "0.35rem",
   padding: "8px 15px",
   width: "100%",
 };
@@ -45,16 +43,26 @@ const Navbar = () => {
   return (
     <div className={classes.navbar}>
       <Box className={classes.navbarsub}>
-      <Link href="/" className={classes.link}>
-        <Box className={classes.logo}>
-            <Box style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-            <Image src='/images/Logo/logo1.svg' height={50} width={50}/>
-            
-            <Typography variant="h5" color="white" style={{paddingLeft:'10px'}}>
-              Fuel Up
-            </Typography>
+        <Link href="/" className={classes.link}>
+          <Box className={classes.logo}>
+            <Box
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Image src="/images/Logo/logo1.svg" height={44} width={44} />
+
+              <Typography
+                variant="h6"
+                color="white"
+                style={{ paddingLeft: "10px" }}
+              >
+                Fuel Up
+              </Typography>
             </Box>
-        </Box>
+          </Box>
         </Link>
         {/* {mobileMenu && ( */}
         <Box className={classes.menu}>
@@ -64,7 +72,7 @@ const Navbar = () => {
               currentPage === "about" ? classes.link_active : ""
             }`}
           >
-            <Typography variant="h6" color="white">
+            <Typography variant="button" color="white">
               About Us
             </Typography>
           </Link>
@@ -74,22 +82,22 @@ const Navbar = () => {
               currentPage === "services" ? classes.link_active : ""
             }`}
           >
-            <Typography variant="h6" color="white">
+            <Typography variant="button" color="white">
               Services
             </Typography>
           </Link>
-          <Link
+          {/* <Link
             href="/plans"
             className={`${classes.link} ${
               currentPage === "plans" ? classes.link_active : ""
             }`}
           >
-            <Typography variant="h6" color="white">
+            <Typography variant="button" color="white">
               Plans
             </Typography>
-          </Link>
-          <Link href="/plans" className={classes.link}>
-          <Button style={buttonStyle}>Request a Quote</Button>
+          </Link> */}
+          <Link href="/contact" className={classes.link}>
+            <Button style={buttonStyle}>Request a Quote</Button>
           </Link>
         </Box>
         {/* )} */}
