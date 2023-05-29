@@ -10,6 +10,9 @@ const Hero = () => {
     borderRadius: "0.35rem",
     padding: "8px 30px",
     // width: "40%",
+    "&:hover": {
+      backgroundColor: "white",
+    },
   };
   const boxes = {
     padding: "10px 0px",

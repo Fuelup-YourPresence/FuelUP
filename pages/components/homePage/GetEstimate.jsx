@@ -21,14 +21,14 @@ const GetEstimate = () => {
             </Typography>
 
             <Typography className={classes.description}>
-              Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
-              dui. Vestrae; Donec velit neque, auctor sit amet aliquam vel,
-              ullamcorper sit amet ligula.
+              At Fuel Up, we believe that high-quality services should be
+              accessible to businesses of all sizes. We offer our exceptional
+              services at highly competitive and affordable prices.
             </Typography>
 
             <div style={{ paddingTop: "20px" }}>
               <Link href="/plans">
-                <Button style={buttonStyle}>Request a Quote</Button>
+                <Button className={classes.buttonStyle}>Request a Quote</Button>
               </Link>
             </div>
           </Box>
@@ -43,3 +43,11 @@ const GetEstimate = () => {
 };
 
 export default GetEstimate;
+/*
+ensuring
+              that you receive the utmost value for your investment. With our
+              commitment to delivering excellence without compromising on cost,
+              you can elevate your business without breaking the bank. Contact
+              us today to discuss how we can tailor our services to meet your
+              specific needs and budget.
+              */

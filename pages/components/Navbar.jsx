@@ -12,13 +12,6 @@ function handleClick() {
   const router = useRouter();
   router.push("/Home");
 }
-const buttonStyle = {
-  backgroundColor: "#C4F0AB",
-  color: "#153240",
-  borderRadius: "0.35rem",
-  padding: "8px 15px",
-  width: "100%",
-};
 
 const Navbar = () => {
   const [drawer, openDrawer] = useState(false);
@@ -96,7 +89,7 @@ const Navbar = () => {
             </Typography>
           </Link> */}
             <Link href="/contact" className={classes.link}>
-              <Button style={buttonStyle}>Request a Quote</Button>
+              <Button className={classes.buttonstyle}>Request a Quote</Button>
             </Link>
           </Box>
         )}
@@ -139,7 +132,7 @@ const Navbar = () => {
               width: "100%",
             }}
           >
-            <Button style={buttonStyle}>Request a Quote</Button>
+            <Button style={classes.buttonStyle}>Request a Quote</Button>
           </Link>
         </Box>
       )}

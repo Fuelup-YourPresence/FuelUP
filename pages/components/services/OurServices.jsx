@@ -62,8 +62,9 @@ const OurServices = () => {
               </Box>
               <Box style={divs_child}>
                 <Typography variant="body1">
-                  Vestibulum ac diam sit amet quam vehicula elementum t neque,
-                  auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+                  Unlock the full potential of your online presence with our
+                  comprehensive and dynamic full-service website development
+                  agency
                 </Typography>
               </Box>
             </Box>

@@ -54,7 +54,11 @@
   color: white;
   position: relative;
 }
-
+/* .link:hover {
+  text-decoration: underline;
+  color: #c4f0ab;
+  text-underline-offset: 0.2em;
+} */
 .link_active {
   border-bottom: 2px solid #c4f0ab;
 }
@@ -69,4 +73,15 @@
   color: #fff;
   z-index: 999;
   padding: 20px;
+}
+.buttonstyle {
+  background-color: #c4f0ab;
+  color: #153240;
+  border-radius: 0.35rem;
+  padding: 8px 15px;
+  width: 100%;
+}
+.buttonstyle:hover {
+  background-color: #ffffff;
+  color: #153240;
 }

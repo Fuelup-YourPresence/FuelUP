@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Image from "next/image";
+import Link from "next/link";
 import ButtnRequest from "../common/ButtnRequest";
 const backg = {
   backgroundImage: "url('/images/Services/Services1.svg')",
@@ -51,16 +52,21 @@ const Hero = () => {
           </Box>
           <Box style={description}>
             <Typography variant="body1" style={txtcolor}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididuntmassa. In fermentum et sollicitudin ac
-              orci.
+              Skyrocket your business to new heights with our agency's
+              exceptional website development services. Harness the power of a
+              captivating online presence and watch your business soar.
             </Typography>
           </Box>
           <Box>
             <Box style={divwbtn}>
               <ButtnRequest />
               <Typography variant="button" style={txtcolor}>
-                Learn more about us
+                <Link
+                  style={{ textDecoration: "none", color: "white" }}
+                  href="/about"
+                >
+                  Learn more about us
+                </Link>
               </Typography>
             </Box>
             <Image

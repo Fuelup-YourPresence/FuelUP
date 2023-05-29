@@ -21,7 +21,8 @@ const WorkflowLeft = ({ data, color }) => {
           <Box
             display="flex"
             flexDirection="column"
-            marginLeft="100px"
+            marginLeft="50px"
+            width="100%"
             justifyContent="center"
           >
             <Box display="flex" flexDirection="row">
@@ -52,13 +53,13 @@ const WorkflowLeft = ({ data, color }) => {
             <Box
               display="flex"
               flexDirection="row"
-              justifyContent="space-between"
+              justifyContent="space-evenly"
             >
               <Box display="flex" flexDirection="column">
                 <Box
                   display="flex"
                   flexDirection="row"
-                  alignItems="center"
+                  // alignItems="center"
                   paddingTop="10px"
                 >
                   <Box
@@ -81,7 +82,7 @@ const WorkflowLeft = ({ data, color }) => {
                 <Box
                   display="flex"
                   flexDirection="row"
-                  alignItems="center"
+                  // alignItems="center"
                   paddingTop="20px"
                 >
                   <Box
@@ -102,8 +103,13 @@ const WorkflowLeft = ({ data, color }) => {
                   </Typography>
                 </Box>
               </Box>
-              <Box display="flex" flexDirection="column" paddingTop="10px">
-                <Box display="flex" flexDirection="row" alignItems="center">
+              <Box
+                display="flex"
+                flexDirection="column"
+                paddingTop="10px"
+                // justifyContent="space-between"
+              >
+                <Box display="flex" flexDirection="row">
                   <Box
                     backgroundColor="#C4F0AB"
                     width="30px"
@@ -124,8 +130,9 @@ const WorkflowLeft = ({ data, color }) => {
                 <Box
                   display="flex"
                   flexDirection="row"
-                  alignItems="center"
+                  // alignItems="center"
                   paddingTop="20px"
+                  width="100%"
                 >
                   <Box
                     backgroundColor="#C4F0AB"

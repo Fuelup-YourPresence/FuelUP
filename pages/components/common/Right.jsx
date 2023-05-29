@@ -12,11 +12,7 @@ const Right = ({ data }) => {
         <Box className={classes.container}>
           <Box className={classes.boxes}>
             <div className={classes.imageBox}>
-              <img
-                src={data.image}
-                alt="My Image"
-                style={{ maxWidth: "100%", maxHeight: "100%" }}
-              />
+              <img src={data.image} alt="My Image" className={classes.image} />
             </div>
           </Box>
           <Box className={classes.box1}>

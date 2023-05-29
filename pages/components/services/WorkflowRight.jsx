@@ -15,7 +15,7 @@ const WorkflowRight = ({ data, color }) => {
     >
       {data && (
         <Box display="flex" flexDirection="row" width="80%" padding="60px 0px">
-          <Box display="flex" flexDirection="column">
+          <Box display="flex" flexDirection="column" width="95%">
             <Box display="flex" flexDirection="column" paddingTop="20px">
               <Typography variant="h7" color={color} fontWeight={600}>
                 Our Workflow
@@ -145,7 +145,12 @@ const WorkflowRight = ({ data, color }) => {
             </Box>
           </Box>
           <Box display="flex" alignItems="center">
-            <img src={data.workflowurl} alt="My Image" width="100%" />
+            <img
+              src={data.workflowurl}
+              alt="My Image"
+              height="100%"
+              width="100%"
+            />
           </Box>
         </Box>
       )}

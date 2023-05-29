@@ -20,7 +20,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
   max-width: 80rem;
 }
 
@@ -35,7 +35,7 @@
 
 /* contentContainer styles */
 .contentContainer {
-  padding-bottom: 80px;
+  padding-bottom: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -72,15 +72,16 @@
 }
 
 /* button styles */
-.button {
+.buttonStyle {
   background-color: #c4f0ab;
   color: #153240;
   padding: 10px;
   width: 50%;
+  font-weight: bold;
 }
 
 /* button hover styles */
-.button:hover {
+.buttonStyle:hover {
   background-color: white;
 }
 

@@ -2,119 +2,121 @@ const workflowdata = [
   {
     id: "01",
     title: "UI/UX Design",
-    titleheadline: "A headline about what this service all about in 6-8 words",
+    titleheadline: "Transforming user experiences with exceptional design.",
     titlesubheadline: "Goal we want to achieve for your design",
     keypoints: [
-      "Aesthetic",
-      "Brand Identity",
-      "Consumer Satisfaction",
+      "Enhancing Usability",
+      "Enhancing User Engagement",
+      "Improving Brand Perception",
       "Target Your Audience",
     ],
     titleurl: "/images/Services/services11.svg",
     background: "/images/Services/Servicebg1.svg",
     worflowtitle: "We love What we Do",
     workflowsub:
-      "ac diam sit amet quam vehicula elementum t neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.",
+      "Our UI/UX workflow seamlessly combines research, design iteration, and user testing to create intuitive and visually captivating experiences that delight users and drive business success",
     workflowkeypoints: [
       {
         workflowkeytitle: "Research",
         workflowkeytitledata:
-          "ac diam sit amet quam vehicula elementum t neque, auctor sit ",
+          "Gathering insights about the target audience, market trends, and competitors to inform the design process.",
       },
       {
         workflowkeytitle: "WireFraming",
         workflowkeytitledata:
-          "ac diam sit amet quam vehicula elementum t neque, auctor sit ",
+          "Creating low-fidelity sketches or digital prototypes to outline the layout, placement of elements, and overall structure of the interface.",
       },
       {
         workflowkeytitle: "User Personas",
         workflowkeytitledata:
-          "ac diam sit amet quam vehicula elementum t neque, auctor sit ",
+          "Developing fictional characters that represent the target users, including their goals, needs, and behaviors.",
       },
       {
         workflowkeytitle: "Prototyping",
         workflowkeytitledata:
-          "ac diam sit amet quam vehicula elementum t neque, auctor sit ",
+          "Building interactive prototypes to simulate user interactions and test usability before development.",
       },
     ],
     workflowurl: "/images/Services/services12.svg",
   },
   {
     id: "02",
-    title: "Website Design",
-    titleheadline: "A headline about what this service all about in 6-8 words",
-    titlesubheadline: "Goal we want to achieve for your design",
+    title: "Website Development",
+    titleheadline: "Creating captivating websites that drive results.",
+    titlesubheadline: "Goal we want to achieve for you through website design",
     keypoints: [
-      "Aesthetic",
+      "Reflecting Business Objectives",
       "Brand Identity",
-      "Consumer Satisfaction",
-      "Target Your Audience",
+      // "Consumer Satisfaction",,
+      "Increasing Conversion Rates",
+      "SEO-Friendliness",
     ],
     titleurl: "/images/Services/services11.svg",
     background: "/images/Services/Servicebg2.svg",
     worflowtitle: "We love What we Do",
     workflowsub:
-      "ac diam sit amet quam vehicula elementum t neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.",
+      "Through meticulous planning, innovative design, and iterative development, our website design workflow brings your vision to life with stunning precision and unrivaled user experiences.",
     workflowkeypoints: [
       {
-        workflowkeytitle: "Research",
+        workflowkeytitle: "Discovery",
         workflowkeytitledata:
-          "ac diam sit amet quam vehicula elementum t neque, auctor sit ",
+          "Understanding your business goals, target audience, and project requirements to lay the foundation for the design process.",
       },
       {
-        workflowkeytitle: "WireFraming",
+        workflowkeytitle: "Planning",
         workflowkeytitledata:
-          "ac diam sit amet quam vehicula elementum t neque, auctor sit ",
+          "Defining the website's structure, features, and content strategy, creating a roadmap for the design and development phases.",
       },
       {
-        workflowkeytitle: "User Personas",
+        workflowkeytitle: "Development",
         workflowkeytitledata:
-          "ac diam sit amet quam vehicula elementum t neque, auctor sit ",
+          "Translating the design into a functional website using coding languages, implementing interactivity, responsiveness, and other required features.",
       },
       {
-        workflowkeytitle: "Prototyping",
+        workflowkeytitle: "Testing",
         workflowkeytitledata:
-          "ac diam sit amet quam vehicula elementum t neque, auctor sit ",
+          "Conducting thorough testing to ensure the website's functionality, compatibility, and usability across various devices and browsers.",
       },
     ],
     workflowurl: "/images/Services/services12.svg",
   },
   {
     id: "03",
-    title: "Overall Design",
-    titleheadline: "A headline about what this service all about in 6-8 words",
+    title: "Overall Branding",
+    titleheadline:
+      "Transforming brands through captivating website design and comprehensive branding services.",
     titlesubheadline: "Goal we want to achieve for your design",
     keypoints: [
-      "Aesthetic",
-      "Brand Identity",
-      "Consumer Satisfaction",
-      "Target Your Audience",
+      "Targeting the Right Audience",
+      "Increasing Brand Recognition",
+      "Differentiating from Competitors",
+      "Driving Business Growth",
     ],
     titleurl: "/images/Services/services11.svg",
     background: "",
     worflowtitle: "We love What we Do",
     workflowsub:
-      "ac diam sit amet quam vehicula elementum t neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.",
+      "Through meticulous research, strategic planning, and creative execution, our overall branding service workflow delivers comprehensive brand solutions that elevate your business and drive meaningful connections with your target audience",
     workflowkeypoints: [
+      {
+        workflowkeytitle: "Website Development",
+        workflowkeytitledata:
+          "Creating a visually captivating and user-friendly website that reflects the brand identity and provides a seamless user experience.",
+      },
+      {
+        workflowkeytitle: "Visual Identity Design",
+        workflowkeytitledata:
+          "Developing a visually appealing and cohesive brand identity, including logo design, color palette, typography, and visual elements.",
+      },
       {
         workflowkeytitle: "Research",
         workflowkeytitledata:
-          "ac diam sit amet quam vehicula elementum t neque, auctor sit ",
+          "Conducting in-depth research to understand the business, target audience, market trends, and competitors",
       },
       {
-        workflowkeytitle: "WireFraming",
+        workflowkeytitle: "UI/UX Design",
         workflowkeytitledata:
-          "ac diam sit amet quam vehicula elementum t neque, auctor sit ",
-      },
-      {
-        workflowkeytitle: "User Personas",
-        workflowkeytitledata:
-          "ac diam sit amet quam vehicula elementum t neque, auctor sit ",
-      },
-      {
-        workflowkeytitle: "Prototyping",
-        workflowkeytitledata:
-          "ac diam sit amet quam vehicula elementum t neque, auctor sit ",
+          "Applying user-centered design principles to create intuitive and seamless user experiences",
       },
     ],
     workflowurl: "/images/Services/services12.svg",

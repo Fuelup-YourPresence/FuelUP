@@ -128,6 +128,12 @@
   .container {
     flex-direction: column;
   }
+}
+/* media query */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
 
   .image {
     margin-right: 0;

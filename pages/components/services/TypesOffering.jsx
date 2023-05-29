@@ -38,7 +38,7 @@ const TypesOffering = ({ data }) => {
               <Typography>{data.description}</Typography>
             </Box>
             <Box>
-              <Link href={data.url} style={atag}>
+              <Link href="/about" style={atag}>
                 Know more
               </Link>
             </Box>

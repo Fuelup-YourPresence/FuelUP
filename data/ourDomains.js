@@ -1,22 +1,21 @@
 import BrushIcon from "@mui/icons-material/Brush";
-import BrandingWatermarkIcon from "@mui/icons-material/BrandingWatermark";
 const ourDomains = [
   {
     icon: <BrushIcon />,
     title: "UI/UX Design",
-    data: "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+    data: "We create captivating and user-friendly digital experiences with aesthetically pleasing designs, leaving a lasting impression on your target audience.",
     image: "/images/Homepage/homepage1.svg",
   },
   {
     icon: "icons",
     title: "Website Development",
-    data: "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+    data: "Bringing your digital presence to life with tailored website development services. Skilled developers creating high-performance, visually stunning websites.",
     image: "/images/Homepage/homepage2.svg",
   },
   {
     icon: "icons",
     title: "Overall Branding",
-    data: "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+    data: "Establishing strong, memorable brand identities that resonate with your audience. Strategic, creative branding solutions that set you apart.",
     image: "/images/Homepage/homepage3.svg",
   },
 ];

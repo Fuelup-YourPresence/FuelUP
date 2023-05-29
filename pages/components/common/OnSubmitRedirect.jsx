@@ -39,6 +39,8 @@ const validphone = {
   backgroundColor: "white",
   padding: "0 15px",
   border: "none",
+  minHeight: "60px",
+  // maxWidth: "50%",
 };
 const validdate = {
   backgroundColor: "white",
@@ -168,7 +170,7 @@ const OnSubmitRedirect = ({ color }) => {
           backgroundColor: color,
           padding: "20px",
           borderRadius: "70px",
-          maxWidth: "55rem",
+          width: "100%",
         }}
       >
         <Stack>
@@ -178,7 +180,7 @@ const OnSubmitRedirect = ({ color }) => {
               sx={(theme) => ({
                 padding: "5px",
                 color: "white",
-                padding: "40px 10px 10px 10px",
+                padding: "20px 10px 10px 10px",
 
                 [theme.breakpoints.down("md")]: {
                   fontSize: "1.1rem",
@@ -241,7 +243,6 @@ const OnSubmitRedirect = ({ color }) => {
                 fullWidth
                 onChange={(e) => setData({ ...data, phone: e.target.value })}
               /> */}
-
               <PhoneInput
                 id="phoneInput"
                 className="phone-input"
@@ -258,23 +259,19 @@ const OnSubmitRedirect = ({ color }) => {
                     : { ...validphone, border: "2px solid red" }
                 }
               />
+
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <Stack
                   style={{
+                    backgroundColor: "white",
                     width: "100%",
+                    borderRadius: "20px",
                   }}
                 >
-                  <MobileDateTimePicker
-                    autoFocus={false}
-                    sx={
-                      isvaliddate
-                        ? { ...validdate }
-                        : { ...validdate, border: "2px solid red" }
-                    }
-                    onChange={handleDateTimeChange}
-                  />
+                  <MobileDateTimePicker onChange={handleDateTimeChange} />
                 </Stack>
               </LocalizationProvider>
+
               {mobileMenu ? (
                 <Button
                   sx={{
