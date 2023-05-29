@@ -144,6 +144,9 @@
 }
 .social {
   color: #153240;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .social:hover {
   color: #c4f0ab;

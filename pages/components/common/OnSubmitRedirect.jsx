@@ -1,7 +1,7 @@
 import SendIcon from "@mui/icons-material/Send";
-import { Box, Button, InputBase, Snackbar, Typography } from "@mui/material";
+import { Box, Button, InputBase, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 // import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
@@ -46,12 +46,9 @@ const validdate = {
   backgroundColor: "white",
   borderRadius: "5px",
 };
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+
 const OnSubmitRedirect = ({ color }) => {
   const [mobileMenu, openMobileMenu] = useState(false);
-  const [open, setOpen] = React.useState(false);
   const [isvalidname, setIsvalidname] = useState(true);
   const [isvalidemail, setIsvalidemail] = useState(true);
   const [isvalidphone, setIsvalidphone] = useState(true);
@@ -146,31 +143,20 @@ const OnSubmitRedirect = ({ color }) => {
       .then((res) => res.json())
       .then((res) => {
         if (res.length > 0) {
-          setOpen(true);
+          Notify.success("Google Meet will be scheduled soon");
         }
       });
   };
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    setOpen(false);
-  };
   return (
     <>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
-          Success, Google Meet will be scheduled.
-        </Alert>
-      </Snackbar>
       <div
         style={{
           backgroundColor: color,
           padding: "20px",
           borderRadius: "70px",
           width: "100%",
+          maxWidth: "1280px",
+          margin: "auto",
         }}
       >
         <Stack>

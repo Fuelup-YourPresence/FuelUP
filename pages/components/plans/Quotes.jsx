@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import {
   Button,
   Checkbox,
@@ -7,10 +6,11 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { borderRadius, Box } from "@mui/system";
+import { Box } from "@mui/system";
+import { useState } from "react";
+import { AiOutlineMessage } from "react-icons/ai";
 import { CiInstagram, CiLinkedin, CiTwitter } from "react-icons/ci";
 import { FaWhatsapp } from "react-icons/fa";
-import { AiOutlineMessage } from "react-icons/ai";
 import { IoMdCall } from "react-icons/io";
 const Quotes = () => {
   const [state, setState] = useState({
@@ -21,6 +21,16 @@ const Quotes = () => {
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e.target[0].value);
+    console.log(e.target[1].value);
+    console.log(e.target[2].value);
+    console.log(e.target[3].value);
+    console.log(state);
+  };
+
   const { UIUXDesign, WebsiteDevelopment, WebsiteDevelopmentandDesign } = state;
   const backg = {
     backgroundImage: "url('/images/Quote/quote.png')",
@@ -61,7 +71,7 @@ const Quotes = () => {
       <Typography variant="h4" sx={{ color: "black", marginTop: "40px" }}>
         Requesting for a Quote
       </Typography>
-      <div style={backg}>
+      <form onSubmit={(e) => handleSubmit(e)} style={backg}>
         <Box
           display="flex"
           flexDirection="column"
@@ -202,6 +212,7 @@ const Quotes = () => {
               <TextField
                 id="standard-basic"
                 label="Name"
+                required
                 variant="standard"
                 style={{ width: "100%" }}
               />
@@ -217,12 +228,14 @@ const Quotes = () => {
               <TextField
                 id="standard-basic"
                 label="Email"
+                required
                 variant="standard"
                 style={{ width: "48%" }}
               />
               <TextField
                 id="standard-basic"
                 label="Phone"
+                required
                 variant="standard"
                 style={{ width: "48%" }}
               />
@@ -234,6 +247,7 @@ const Quotes = () => {
               placeholder="I want to build a website for my business..."
               id="standard-basic"
               variant="standard"
+              required
               style={{ width: "100%" }}
             />
             <Typography variant="subtitle1">How can we help</Typography>
@@ -280,18 +294,21 @@ const Quotes = () => {
             </FormGroup>
             <Button
               width="100%"
-              sx={{ backgroundColor: "#07111F", color: "white",
-              "&:hover": {
-                backgroundColor: "#153240",
+              sx={{
+                backgroundColor: "#07111F",
                 color: "white",
-              },
-            }}
+                "&:hover": {
+                  backgroundColor: "#153240",
+                  color: "white",
+                },
+              }}
+              type="submit"
             >
               Request a Quote
             </Button>
           </Box>
         </Box>
-      </div>
+      </form>
     </div>
   );
 };

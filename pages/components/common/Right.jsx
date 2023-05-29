@@ -51,22 +51,34 @@ const Right = ({ data }) => {
                       <Box className={classes.socialsBox}>
                         <Box className={classes.socialicons}>
                           <Link href={data.socials[0]}>
-                            <CiLinkedin color="#153240" />
+                            <CiLinkedin
+                              color="#153240"
+                              className={classes.social}
+                            />
                           </Link>
                         </Box>
                         <Box className={classes.socialicons}>
                           <Link href={data.socials[1]}>
-                            <CiTwitter color="#153240" />
+                            <CiTwitter
+                              color="#153240"
+                              className={classes.social}
+                            />
                           </Link>
                         </Box>
                         <Box className={classes.socialicons}>
                           <Link href={data.socials[2]}>
-                            <CiInstagram color="#153240" />
+                            <CiInstagram
+                              color="#153240"
+                              className={classes.social}
+                            />
                           </Link>
                         </Box>
                         <Box className={classes.socialicons}>
                           <Link href={data.socials[0]}>
-                            <FaWhatsapp color="#153240" />
+                            <FaWhatsapp
+                              color="#153240"
+                              className={classes.social}
+                            />
                           </Link>
                         </Box>
                       </Box>
