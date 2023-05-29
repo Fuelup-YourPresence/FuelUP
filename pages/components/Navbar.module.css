@@ -20,12 +20,6 @@
   padding: 10px;
   /* margin-left: 40px; */
 }
-.link {
-  text-decoration: none;
-}
-.link:hover {
-  text-decoration: none;
-}
 
 /* menu styles */
 .menu {
@@ -54,7 +48,15 @@
   color: white;
   position: relative;
 }
-/* .link:hover {
+.link:hover {
+  /* text-decoration: underline; */
+  color: #c4f0ab !important;
+}
+.text:hover {
+  color: #c4f0ab;
+}
+/* .li
+nk:hover {
   text-decoration: underline;
   color: #c4f0ab;
   text-underline-offset: 0.2em;
@@ -80,6 +82,8 @@
   border-radius: 0.35rem;
   padding: 8px 15px;
   width: 100%;
+  font-weight: bold;
+  cursor: pointer;
 }
 .buttonstyle:hover {
   background-color: #ffffff;

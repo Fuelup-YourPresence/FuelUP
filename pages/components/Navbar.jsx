@@ -89,7 +89,7 @@ const Navbar = () => {
             </Typography>
           </Link> */}
             <Link href="/contact" className={classes.link}>
-              <Button className={classes.buttonstyle}>Request a Quote</Button>
+              <button className={classes.buttonstyle}>Request a Quote</button>
             </Link>
           </Box>
         )}
@@ -112,12 +112,12 @@ const Navbar = () => {
           }}
         >
           <Link href="/about" className={classes.link}>
-            <Typography variant="h6" color="white" fontDec>
+            <Typography variant="h6" className={classes.text}>
               About Us
             </Typography>
           </Link>
           <Link href="/services" className={classes.link}>
-            <Typography variant="h6" color="white">
+            <Typography variant="h6" className={classes.text}>
               Services
             </Typography>
           </Link>

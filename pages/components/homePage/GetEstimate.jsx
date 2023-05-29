@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Link from "next/link";
 import PriceQuote from "../common/PriceQuote";
@@ -28,7 +28,7 @@ const GetEstimate = () => {
 
             <div style={{ paddingTop: "20px" }}>
               <Link href="/plans">
-                <Button className={classes.buttonStyle}>Request a Quote</Button>
+                <button className={classes.buttonStyle}>Request a Quote</button>
               </Link>
             </div>
           </Box>
