@@ -16,7 +16,7 @@ const GetEstimate = () => {
       <div className={classes.container}>
         <Box className={classes.contentContainer}>
           <Box className={classes.contentsubContainer}>
-            <Typography className={classes.title}>
+            <Typography className={classes.title} style={{ fontSize: "2rem" }}>
               Get our services at very affordable prices
             </Typography>
 
