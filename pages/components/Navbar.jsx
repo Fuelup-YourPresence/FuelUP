@@ -18,7 +18,6 @@ const Navbar = () => {
   const [mobileMenu, openMobileMenu] = useState(false);
   const router = useRouter();
   const currentPage = router.asPath.split("/")[1];
-
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth <= 768) {

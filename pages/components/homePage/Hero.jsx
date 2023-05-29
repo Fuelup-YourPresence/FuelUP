@@ -101,7 +101,7 @@ const Hero = () => {
           style={imagesty}
         />
       </Box>
-      <Box padding="10px 10px 150px 10px" maxWidth="100rem" margin="auto">
+      <Box padding="10px 10px 150px 10px" width="80%" margin="auto">
         <OnSubmitRedirect color={color} />
       </Box>
     </Stack>
