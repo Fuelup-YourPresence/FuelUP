@@ -1,3 +1,4 @@
+import emailjs from "@emailjs/browser";
 import {
   Button,
   Checkbox,
@@ -7,28 +8,48 @@ import {
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import { useState } from "react";
+import { Notify } from "notiflix";
+import { useRef, useState } from "react";
 import { AiOutlineMessage } from "react-icons/ai";
 import { CiInstagram, CiLinkedin, CiTwitter } from "react-icons/ci";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoMdCall } from "react-icons/io";
+
 const Quotes = () => {
   const [state, setState] = useState({
     UIUXDesign: true,
     WebsiteDevelopment: false,
     WebsiteDevelopmentandDesign: false,
   });
+
+  const form = useRef(null);
+
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target[0].value);
-    console.log(e.target[1].value);
-    console.log(e.target[2].value);
-    console.log(e.target[3].value);
-    console.log(state);
+
+    emailjs
+      .sendForm(
+        "service_6rzylxr",
+        "template_qpndifd",
+        form.current,
+        "QtRV7jccLcIzgsQSc"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          Notify.success(
+            "Quote Request sent successfully! Our team will get in touch with you shortly."
+          );
+        },
+        (error) => {
+          console.log(error.text);
+          Notify.failure("Message not sent. Please try again.");
+        }
+      );
   };
 
   const { UIUXDesign, WebsiteDevelopment, WebsiteDevelopmentandDesign } = state;
@@ -71,7 +92,7 @@ const Quotes = () => {
       <Typography variant="h4" sx={{ color: "black", marginTop: "40px" }}>
         Requesting for a Quote
       </Typography>
-      <form onSubmit={(e) => handleSubmit(e)} style={backg}>
+      <form ref={form} onSubmit={(e) => handleSubmit(e)} style={backg}>
         <Box
           display="flex"
           flexDirection="column"
@@ -210,7 +231,8 @@ const Quotes = () => {
             </Typography>
             <Box style={{ width: "100%" }}>
               <TextField
-                id="standard-basic"
+                id="name"
+                name="name"
                 label="Name"
                 required
                 variant="standard"
@@ -226,16 +248,20 @@ const Quotes = () => {
               }}
             >
               <TextField
-                id="standard-basic"
+                id="email"
+                name="email"
+                type="email"
                 label="Email"
                 required
                 variant="standard"
                 style={{ width: "48%" }}
               />
               <TextField
-                id="standard-basic"
+                id="phone"
+                name="phone"
                 label="Phone"
                 required
+                type="number"
                 variant="standard"
                 style={{ width: "48%" }}
               />
@@ -245,7 +271,8 @@ const Quotes = () => {
             </Typography>
             <TextField
               placeholder="I want to build a website for my business..."
-              id="standard-basic"
+              id="message"
+              name="message"
               variant="standard"
               required
               style={{ width: "100%" }}
@@ -258,6 +285,7 @@ const Quotes = () => {
                     checked={UIUXDesign}
                     onChange={handleChange}
                     name="UIUXDesign"
+                    id="UIUXDesign"
                     sx={{
                       "& .MuiSvgIcon-root": { color: "#153240" },
                     }}
@@ -271,6 +299,7 @@ const Quotes = () => {
                     checked={WebsiteDevelopment}
                     onChange={handleChange}
                     name="WebsiteDevelopment"
+                    id="WebsiteDevelopment"
                     sx={{
                       "& .MuiSvgIcon-root": { color: "#153240" },
                     }}
@@ -284,6 +313,7 @@ const Quotes = () => {
                     checked={WebsiteDevelopmentandDesign}
                     onChange={handleChange}
                     name="WebsiteDevelopmentandDesign"
+                    id="WebsiteDevelopmentandDesign"
                     sx={{
                       "& .MuiSvgIcon-root": { color: "#153240" },
                     }}
