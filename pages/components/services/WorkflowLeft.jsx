@@ -3,8 +3,16 @@ import Link from "next/link";
 import { GiArchiveResearch, GiWireframeGlobe } from "react-icons/gi";
 import { MdOutlinePermIdentity } from "react-icons/md";
 import { SiProtodotio } from "react-icons/si";
+import { scroller } from "react-scroll";
 const WorkflowLeft = ({ data, color }) => {
   const colors = color === "#D9D9D9" ? "#C4F0AB" : "#153240";
+  const scrollToSection = (value) => {
+    scroller.scrollTo(value, {
+      smooth: true,
+      duration: 500,
+      offset: -50,
+    });
+  };
   return (
     <div
       style={{
@@ -172,9 +180,20 @@ const WorkflowLeft = ({ data, color }) => {
                   Request a quote
                 </Button>
               </Link>
-              <Box display="flex" justifyContent="center" alignItems="center">
-                <Typography variant="button" marginLeft="40px" color={color}>
-                  Chat with us
+              <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                style={{ cursor: "pointer" }}
+                onClick={scrollToSection()}
+              >
+                <Typography
+                  variant="button"
+                  marginLeft="40px"
+                  color={color}
+                  onClick={() => scrollToSection("footer")}
+                >
+                  Connect With Us
                 </Typography>
               </Box>
             </Box>

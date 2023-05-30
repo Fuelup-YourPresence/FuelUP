@@ -46,7 +46,7 @@ const TypesOffering = ({ data }) => {
               <Typography>{data.description}</Typography>
             </Box>
             <Box
-              sx={{ color: "green", fontWeight: "700", cursor: "pointer" }}
+              sx={{ color: "#30A2FF", cursor: "pointer" }}
               onClick={() => scrollToSection(data.title)}
             >
               Know more
