@@ -1,16 +1,13 @@
-import { Typography } from '@mui/material'
-import { Box } from '@mui/system'
-import React from 'react'
-import Models from './Models'
-import classes from './styles/WhyOurCompany.module.css'
-import { makeStyles } from '@mui/styles';
-import modelData from '@/data/modelData';
+import modelData from "@/data/modelData";
+import { Typography } from "@mui/material";
+import Models from "./Models";
+import classes from "./styles/WhyOurCompany.module.css";
 const WhyOurCompany = () => {
   return (
     <div className={classes.root}>
       <div className={classes.container}>
         <div className={classes.title}>
-          <Typography color="#153240" variant="h5">
+          <Typography color="#153240" variant="h4" fontWeight="700">
             Why Our Company
           </Typography>
         </div>

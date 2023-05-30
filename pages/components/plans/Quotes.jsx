@@ -1,4 +1,5 @@
 import emailjs from "@emailjs/browser";
+import { Mail } from "@mui/icons-material";
 import {
   Button,
   Checkbox,
@@ -8,13 +9,12 @@ import {
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
+import Link from "next/link";
 import { Notify } from "notiflix";
 import { useRef, useState } from "react";
-import { AiOutlineMessage } from "react-icons/ai";
 import { CiInstagram, CiLinkedin, CiTwitter } from "react-icons/ci";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoMdCall } from "react-icons/io";
-
 const Quotes = () => {
   const [state, setState] = useState({
     UIUXDesign: true,
@@ -123,7 +123,7 @@ const Quotes = () => {
                 alignItems="center"
                 justifyContent="center"
               >
-                <AiOutlineMessage color="#153240" fontSize="1.25rem" />
+                <Mail color="#153240" fontSize="1.25rem" />
               </Box>
               <Box
                 sx={{
@@ -134,7 +134,7 @@ const Quotes = () => {
                 }}
               >
                 <Typography variant="body1" sx={{ color: "white" }}>
-                  &nbsp;Chat to us
+                  &nbsp;Mail to us
                 </Typography>
                 <Typography variant="body2" sx={{ color: "white" }}>
                   Our Friendly team is here to help
@@ -177,7 +177,13 @@ const Quotes = () => {
                 <Typography variant="body2" sx={{ color: "white" }}>
                   Mon - Fri from 10am to 6pm IST
                 </Typography>
-                <Typography variant="body2" sx={{ color: "white" }}>
+                <Typography
+                  variant="body2"
+                  sx={{ color: "white" }}
+                  component="a"
+                  style={{ textDecoration: "none" }}
+                  href={`mailto:${"fuelup.yourpresence@gmail.com"}`}
+                >
                   fuelup.yourpresence@gmail.com
                 </Typography>
               </Box>
@@ -191,14 +197,22 @@ const Quotes = () => {
             paddingBottom="20px"
             width="50%"
           >
-            <CiLinkedin
-              color="#C4F0AB"
-              fontSize="20px"
-              sx={{ paddingRight: "10px" }}
-            />
-            <CiTwitter color="#C4F0AB" fontSize="20px" paddingLeft="10px" />
-            <CiInstagram color="#C4F0AB" fontSize="20px" paddingLeft="10px" />
-            <FaWhatsapp color="#C4F0AB" fontSize="20px" paddingLeft="10px" />
+            <Link href="/">
+              <CiLinkedin
+                color="#C4F0AB"
+                fontSize="20px"
+                sx={{ paddingRight: "10px" }}
+              />
+            </Link>
+            <Link href="/">
+              <CiTwitter color="#C4F0AB" fontSize="20px" paddingLeft="10px" />
+            </Link>
+            <Link href="/">
+              <CiInstagram color="#C4F0AB" fontSize="20px" paddingLeft="10px" />
+            </Link>
+            <Link href="/">
+              <FaWhatsapp color="#C4F0AB" fontSize="20px" paddingLeft="10px" />
+            </Link>
           </Box>
         </Box>
         <Box

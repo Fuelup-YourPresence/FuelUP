@@ -1,7 +1,9 @@
 import { Button, Typography } from "@mui/material";
 import { Box, Stack } from "@mui/system";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import OnSubmitRedirect from "../common/OnSubmitRedirect";
+import Typewriter from "../common/Typewriter";
 const Hero = () => {
   // console.log(OurDomains)
   const buttonStyle = {
@@ -78,7 +80,9 @@ const Hero = () => {
                 },
               })}
             >
-              Creating a seamless online experience for your brand
+              <Typewriter
+                text={"Creating a seamless online experience for your brand"}
+              />
             </Typography>
           </Box>
           <Box style={boxes}>
@@ -95,10 +99,18 @@ const Hero = () => {
             </Link>
           </Box>
         </Box>
-        <img
+        <motion.img
           src="/images/Homepage/homepagelegend.svg"
-          alt="My Image"
-          style={imagesty}
+          alt="Moving Image"
+          initial={{ y: 0 }}
+          animate={{
+            y: [0, 30, 0], // Values for y position: start, middle, end
+          }}
+          transition={{
+            repeat: Infinity, // Loops the animation indefinitely
+            duration: 3, // Duration of each animation cycle
+            ease: "easeInOut", // Easing function for smoother animation
+          }}
         />
       </Box>
       <Box padding="10px 10px 150px 10px" width="80%" margin="auto">
@@ -109,3 +121,10 @@ const Hero = () => {
 };
 
 export default Hero;
+{
+  /* <img
+          src="/images/Homepage/homepagelegend.svg"
+          alt="My Image"
+          style={imagesty}
+        /> */
+}

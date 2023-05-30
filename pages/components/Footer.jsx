@@ -103,7 +103,7 @@ const Footer = () => {
                 <Typography className={classes.text}>Privacy Policy</Typography>
               </Link>
 
-              <Typography className={classes.text}>Cookie Policy</Typography>
+              {/* <Typography className={classes.text}>Cookie Policy</Typography> */}
             </Box>
           </Box>
           <Box className={classes.listItem}>

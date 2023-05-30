@@ -1,4 +1,5 @@
 import { Box } from "@mui/system";
+import { Element } from "react-scroll";
 import WorkflowLeft from "./WorkflowLeft";
 import WorkflowRight from "./WorkflowRight";
 const Workflow = ({ data, color }) => {
@@ -14,17 +15,19 @@ const Workflow = ({ data, color }) => {
   };
   return (
     <div style={background}>
-      <Box
-        display="flex"
-        flexDirection="column"
-        maxWidth="80rem"
-        margin="auto"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <WorkflowLeft data={data} color={color} />
-        <WorkflowRight data={data} color={color} />
-      </Box>
+      <Element name={data.title}>
+        <Box
+          display="flex"
+          flexDirection="column"
+          maxWidth="80rem"
+          margin="auto"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <WorkflowLeft data={data} color={color} />
+          <WorkflowRight data={data} color={color} />
+        </Box>
+      </Element>
     </div>
   );
 };

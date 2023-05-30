@@ -46,7 +46,7 @@ const Ourservices = () => {
           >
             We build websites that work as hard as you do.
           </Typography>
-          <Typography variant="body1" color="rgba(7, 17, 31, 1)">
+          <Typography variant="subtitle1" color="rgba(7, 17, 31, 1)">
             At our company, we provide a range of services that are tailored to
             meet the unique needs of our clients. Our team of experts
             specializes in creating custom websites which are highly functional

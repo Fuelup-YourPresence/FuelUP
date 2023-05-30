@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
+import Disclaimer from "./components/common/Disclaimer";
 import HomePage from "./homepage";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -9,7 +10,7 @@ export default function Home() {
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth < 1024) {
         openMobileMenu(true);
       } else {
         openMobileMenu(false);
@@ -27,7 +28,7 @@ export default function Home() {
     <div>
       {mobileMenu ? (
         <div>
-          <h1>Currently serving desktop versions</h1>
+          <Disclaimer />
         </div>
       ) : (
         <HomePage />

@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import Link from "next/link";
+import { scroller } from "react-scroll";
 
 const TypesOffering = ({ data }) => {
   const text = {
@@ -16,6 +16,14 @@ const TypesOffering = ({ data }) => {
   const heading = {
     paddingBottom: "15px",
   };
+  const scrollToSection = (value) => {
+    scroller.scrollTo(value, {
+      smooth: true,
+      duration: 500,
+      offset: -50,
+    });
+  };
+
   return (
     <div>
       {data && (
@@ -37,10 +45,11 @@ const TypesOffering = ({ data }) => {
             <Box>
               <Typography>{data.description}</Typography>
             </Box>
-            <Box>
-              <Link href="/about" style={atag}>
-                Know more
-              </Link>
+            <Box
+              sx={{ color: "green", fontWeight: "700", cursor: "pointer" }}
+              onClick={() => scrollToSection(data.title)}
+            >
+              Know more
             </Box>
           </Box>
         </Box>
