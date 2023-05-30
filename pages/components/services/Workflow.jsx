@@ -15,7 +15,7 @@ const Workflow = ({ data, color }) => {
   };
   return (
     <div style={background}>
-      <Element name={data.title}>
+      <Element name={data ? data.title : ""}>
         <Box
           display="flex"
           flexDirection="column"
