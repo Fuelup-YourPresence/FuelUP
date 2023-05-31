@@ -185,7 +185,6 @@ const WorkflowLeft = ({ data, color }) => {
                 justifyContent="center"
                 alignItems="center"
                 style={{ cursor: "pointer" }}
-                onClick={scrollToSection()}
               >
                 <Typography
                   variant="button"

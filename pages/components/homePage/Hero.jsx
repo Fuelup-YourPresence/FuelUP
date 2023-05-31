@@ -84,30 +84,32 @@ const Hero = () => {
             >
               <TypewriterComponent
                 onInit={(typewriter) => {
-                  typewriter
-                    .typeString(
-                      "Creating a seamless online experience for your "
-                    )
-                    .typeString("Brand")
+                  if (typeof document !== "undefined") {
+                    typewriter
+                      .typeString(
+                        "Creating a seamless online experience for your "
+                      )
+                      .typeString("Brand")
 
-                    .pauseFor(1500)
-                    .deleteChars(5)
-                    .typeString("Product")
+                      .pauseFor(1500)
+                      .deleteChars(5)
+                      .typeString("Product")
 
-                    .pauseFor(1500)
-                    .deleteChars(7)
-                    .typeString("Design");
-                  typewriter
-                    .callFunction(() => {
-                      // Hide the cursor after typing "Design"
-                      const cursorElement = document.querySelector(
-                        ".Typewriter__cursor"
-                      );
-                      if (cursorElement) {
-                        cursorElement.style.display = "none";
-                      }
-                    })
-                    .start();
+                      .pauseFor(1500)
+                      .deleteChars(7)
+                      .typeString("Design");
+                    typewriter
+                      .callFunction(() => {
+                        // Hide the cursor after typing "Design"
+                        const cursorElement = document.querySelector(
+                          ".Typewriter__cursor"
+                        );
+                        if (cursorElement) {
+                          cursorElement.style.display = "none";
+                        }
+                      })
+                      .start();
+                  }
                 }}
               />
             </Typography>
