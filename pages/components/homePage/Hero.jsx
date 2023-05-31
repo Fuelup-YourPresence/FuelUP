@@ -2,10 +2,12 @@ import { Button, Typography } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import TypewriterComponent from "typewriter-effect";
 import OnSubmitRedirect from "../common/OnSubmitRedirect";
-import Typewriter from "../common/Typewriter";
 const Hero = () => {
   // console.log(OurDomains)
+  const sentence = "Creating a seamless online experience for your ";
+  const words = ["Brand", "Design", "Product"];
   const buttonStyle = {
     backgroundColor: "#C4F0AB",
     color: "#153240",
@@ -80,8 +82,33 @@ const Hero = () => {
                 },
               })}
             >
-              <Typewriter
-                text={"Creating a seamless online experience for your brand"}
+              <TypewriterComponent
+                onInit={(typewriter) => {
+                  typewriter
+                    .typeString(
+                      "Creating a seamless online experience for your "
+                    )
+                    .typeString("Brand")
+
+                    .pauseFor(1500)
+                    .deleteChars(5)
+                    .typeString("Product")
+
+                    .pauseFor(1500)
+                    .deleteChars(7)
+                    .typeString("Design");
+                  typewriter
+                    .callFunction(() => {
+                      // Hide the cursor after typing "Design"
+                      const cursorElement = document.querySelector(
+                        ".Typewriter__cursor"
+                      );
+                      if (cursorElement) {
+                        cursorElement.style.display = "none";
+                      }
+                    })
+                    .start();
+                }}
               />
             </Typography>
           </Box>

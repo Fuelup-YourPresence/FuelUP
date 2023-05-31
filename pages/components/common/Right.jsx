@@ -1,9 +1,8 @@
-import { Brush } from "@mui/icons-material";
+import { Brush, GitHub, Mail } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Link from "next/link";
-import { CiInstagram, CiLinkedin, CiTwitter } from "react-icons/ci";
-import { FaWhatsapp } from "react-icons/fa";
+import { CiLinkedin, CiTwitter } from "react-icons/ci";
 import classes from "./styles/Right.module.css";
 const Right = ({ data }) => {
   return (
@@ -50,7 +49,11 @@ const Right = ({ data }) => {
                     <Box className={classes.descr}>
                       <Box className={classes.socialsBox}>
                         <Box className={classes.socialicons}>
-                          <Link href={data.socials[0]}>
+                          <Link
+                            href={data.socials[0]}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
                             <CiLinkedin
                               color="#153240"
                               className={classes.social}
@@ -58,7 +61,11 @@ const Right = ({ data }) => {
                           </Link>
                         </Box>
                         <Box className={classes.socialicons}>
-                          <Link href={data.socials[1]}>
+                          <Link
+                            href={data.socials[1]}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
                             <CiTwitter
                               color="#153240"
                               className={classes.social}
@@ -66,16 +73,21 @@ const Right = ({ data }) => {
                           </Link>
                         </Box>
                         <Box className={classes.socialicons}>
-                          <Link href={data.socials[2]}>
-                            <CiInstagram
-                              color="#153240"
-                              className={classes.social}
-                            />
+                          <Link
+                            href={`mailto:${data.socials[2]}`}
+                            style={{ textDecoration: "none", color: "#153240" }}
+                          >
+                            <Mail color="#153240" className={classes.social} />
                           </Link>
                         </Box>
                         <Box className={classes.socialicons}>
-                          <Link href={data.socials[0]}>
-                            <FaWhatsapp
+                          <Link
+                            href={data.socials[3]}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            style={{ textDecoration: "none", color: "#153240" }}
+                          >
+                            <GitHub
                               color="#153240"
                               className={classes.social}
                             />

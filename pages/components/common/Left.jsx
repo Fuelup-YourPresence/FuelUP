@@ -1,9 +1,8 @@
-import { Brush } from "@mui/icons-material";
+import { Brush, GitHub, Mail } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import Link from "next/link";
-import { CiInstagram, CiLinkedin, CiTwitter } from "react-icons/ci";
-import { FaWhatsapp } from "react-icons/fa";
+import { CiLinkedin, CiTwitter } from "react-icons/ci";
 import classes from "./styles/Left.module.css";
 const Left = ({ data }) => {
   return (
@@ -46,7 +45,9 @@ const Left = ({ data }) => {
                       <Box className={classes.socialsBox}>
                         <Box className={classes.socialicons}>
                           <Link
+                            target="_blank"
                             href={data.socials[0]}
+                            rel="noopener noreferrer"
                             style={{ textDecoration: "none" }}
                           >
                             <CiLinkedin className={classes.social} />
@@ -54,6 +55,8 @@ const Left = ({ data }) => {
                         </Box>
                         <Box className={classes.socialicons}>
                           <Link
+                            target="_blank"
+                            rel="noopener noreferrer"
                             href={data.socials[1]}
                             style={{ textDecoration: "none" }}
                           >
@@ -62,18 +65,20 @@ const Left = ({ data }) => {
                         </Box>
                         <Box className={classes.socialicons}>
                           <Link
-                            href={data.socials[2]}
+                            href={`mailto:${data.socials[2]}`}
                             style={{ textDecoration: "none" }}
                           >
-                            <CiInstagram className={classes.social} />
+                            <Mail className={classes.social} />
                           </Link>
                         </Box>
                         <Box className={classes.socialicons}>
                           <Link
-                            href={data.socials[0]}
+                            target="_blank"
+                            href={data.socials[3]}
                             style={{ textDecoration: "none" }}
+                            rel="noopener noreferrer"
                           >
-                            <FaWhatsapp className={classes.social} />
+                            <GitHub className={classes.social} />
                           </Link>
                         </Box>
                       </Box>

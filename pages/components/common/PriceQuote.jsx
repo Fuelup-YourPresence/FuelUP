@@ -76,22 +76,21 @@ function PriceQuote() {
             style={{ display: "inline-block", justifyContent: "" }}
           >
             <Tooltip
-              title="This is some additional information"
+              title="Static Webpages do not come with user interaction functionality"
               placement="right"
             >
-              <span style={{ color: "grey" }}>
+              <span style={{ color: "#153240" }}>
                 <InfoIcon />
               </span>
             </Tooltip>
           </Typography>
           <Slider
+            aria-label="Volume"
             style={sliderStyle}
             value={staticPageCount}
             onChange={handleStaticPageCountChange}
             min={1}
             max={20}
-            step={1}
-            marks
             valueLabelDisplay="auto"
           />
           <Typography
@@ -102,22 +101,21 @@ function PriceQuote() {
           </Typography>
           <Typography variant="subtitle1" style={{ display: "inline-block" }}>
             <Tooltip
-              title="This is some additional information"
+              title="Dynamic Webpages come with user interaction functionality"
               placement="right"
             >
-              <span style={{ color: "grey" }}>
+              <span style={{ color: "#153240" }}>
                 <InfoIcon />
               </span>
             </Tooltip>
           </Typography>
           <Slider
+            aria-label="Volume"
             style={sliderStyle}
             value={dynamicPageCount}
             onChange={handleDynamicPageCountChange}
             min={1}
             max={20}
-            step={1}
-            marks
             valueLabelDisplay="auto"
           />
         </div>
@@ -170,6 +168,14 @@ function PriceQuote() {
                 <Typography variant="caption" color="grey">
                   We want
                 </Typography>
+                <Tooltip
+                  title="This Cost is does not includes Domain name and Hosting cost"
+                  placement="right"
+                >
+                  <span style={{ color: "#153240" }}>
+                    <InfoIcon />
+                  </span>
+                </Tooltip>
               </Stack>
               <Typography variant="h6">₹ {price}</Typography>
             </Stack>

@@ -1,27 +1,42 @@
 const ourTeam = [
   {
     icon: "icons",
-    title: "UI/UX Design",
+    title: "CTO and Co-Founder",
     name: "Rajib Mondal",
-    data: "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+    data: "As the CTO of a leading website development agency, I'm a versatile Full Stack Developer with expertise in MERN, TypeScript, Python, Java, and Solidity. ",
     image: "/images/About/rajib.svg",
-    socials: ["google.com", "google.com", "google.com"],
+    socials: [
+      "https://www.linkedin.com/in/mondalraj/",
+      "https://www.twitter.com/_mondalraj",
+      "mondalrajib2002@gmail.com",
+      "https://www.github.com/mondalraj",
+    ],
   },
   {
     icon: "icons",
-    title: "Front End Developer",
+    title: "Co-Founder",
     name: "Kartikey Gupta",
-    data: "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+    data: "Hi There I'm a a problem solver and tech enthusiast who thrives on finding solutions and exploring the world of technology with expertise in MERN , C++ and Java.",
     image: "/images/About/kartikey.svg",
-    socials: ["google.com", "google.com", "google.com"],
+    socials: [
+      "https://www.linkedin.com/in/kartikey20gupta/",
+      "https://www.twitter.com/Kartikey20Gupta",
+      "kartikeygupta201@gmail.com",
+      "https://www.github.com/kartik-raj7",
+    ],
   },
   {
     icon: "icons",
-    title: "Overall Branding",
+    title: "Media and Outreach",
     name: "Ansh",
-    data: "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+    data: "I am a skilled professional with a passion for marketing and promotions. I excel in creating effective strategies to drive brand awareness, engage target audiences, and increase customer acquisition.",
     image: "/images/About/ansh.svg",
-    socials: ["google.com", "google.com", "google.com"],
+    socials: [
+      "https://www.linkedin.com/",
+      "https://www.twitter.com/",
+      "mrpacman@gmail.com",
+      "https://www.github.com/",
+    ],
   },
 ];
 export default ourTeam;

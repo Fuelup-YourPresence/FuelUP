@@ -4,13 +4,13 @@ const ourDomains = [
     icon: <BrushIcon />,
     title: "UI/UX Design",
     data: "We create captivating and user-friendly digital experiences with aesthetically pleasing designs, leaving a lasting impression on your target audience.",
-    image: "/images/Homepage/homepage1.svg",
+    image: "/images/Homepage/UI.png",
   },
   {
     icon: "icons",
     title: "Website Development",
     data: "Bringing your digital presence to life with tailored website development services. Skilled developers creating high-performance, visually stunning websites.",
-    image: "/images/Homepage/homepage2.svg",
+    image: "/images/Homepage/Branding.jpg",
   },
   {
     icon: "icons",

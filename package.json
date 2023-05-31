@@ -27,6 +27,7 @@
     "react-icons": "^4.8.0",
     "react-phone-number-input": "^3.2.19",
     "react-scroll": "^1.8.9",
-    "styled-components": "^5.3.9"
+    "styled-components": "^5.3.9",
+    "typewriter-effect": "^2.19.0"
   }
 }
