@@ -1,5 +1,8 @@
+import ourDomains from "@/data/ourDomains";
 import { Box, Typography } from "@mui/material";
-import ourDomains from "../../../data/ourDomains";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import Left from "../common/Left";
 import Right from "../common/Right";
 const Ourservices = () => {
@@ -13,7 +16,47 @@ const Ourservices = () => {
     alignItems: "center",
     justifyContent: "center",
   };
-  // console.log(OurDomains);
+  const controlsLeft = useAnimation();
+  const controlsLeft2 = useAnimation();
+  const controlsRight = useAnimation();
+  const [refLeft, inViewLeft] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+  const [refLeft2, inViewLeft2] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+  const [refRight, inViewRight] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inViewLeft) {
+      controlsLeft.start({ x: 0 });
+    } else {
+      controlsLeft.start({ x: -1000 });
+    }
+    if (inViewLeft2) {
+      controlsLeft2.start({ x: 0 });
+    } else {
+      controlsLeft2.start({ x: -1000 });
+    }
+    if (inViewRight) {
+      controlsRight.start({ x: 0 });
+    } else {
+      controlsRight.start({ x: 1000 });
+    }
+  }, [
+    controlsLeft,
+    inViewLeft,
+    controlsRight,
+    inViewRight,
+    inViewLeft2,
+    controlsLeft2,
+  ]);
+
   return (
     <>
       <div
@@ -62,14 +105,32 @@ const Ourservices = () => {
             },
           })}
         >
-          <div style={box}>
-            <Left data={ourDomains[0]} />
+          <div ref={refLeft} style={box}>
+            <motion.div
+              initial={{ x: -1000 }}
+              animate={controlsLeft}
+              transition={{ duration: 1.0 }}
+            >
+              <Left data={ourDomains[0]} />
+            </motion.div>
           </div>
-          <div style={box}>
-            <Right data={ourDomains[1]} />
+          <div ref={refRight} style={box}>
+            <motion.div
+              initial={{ x: 1000 }}
+              animate={controlsRight}
+              transition={{ duration: 1.0 }}
+            >
+              <Right data={ourDomains[1]} />
+            </motion.div>
           </div>
-          <div style={box}>
-            <Left data={ourDomains[2]} />
+          <div ref={refLeft2} style={box}>
+            <motion.div
+              initial={{ x: -1000 }}
+              animate={controlsLeft2}
+              transition={{ duration: 1.0 }}
+            >
+              <Left data={ourDomains[2]} />
+            </motion.div>
           </div>
         </Box>
       </div>
