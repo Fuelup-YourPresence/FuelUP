@@ -83,10 +83,6 @@ const Hero = () => {
               })}
             >
               <TypewriterComponent
-                options={{
-                  autoStart: true,
-                  loop: true,
-                }}
                 onInit={(typewriter) => {
                   if (typeof document !== "undefined") {
                     typewriter
@@ -99,15 +95,16 @@ const Hero = () => {
                       .typeString("Product")
                       .pauseFor(1500)
                       .deleteChars(7)
-                      .typeString("Design");
-                    typewriter.callFunction(() => {
-                      const cursorElement = document.querySelector(
-                        ".Typewriter__cursor"
-                      );
-                      if (cursorElement) {
-                        cursorElement.style.display = "none";
-                      }
-                    });
+                      .typeString("Design")
+                      .callFunction(() => {
+                        const cursorElement = document.querySelector(
+                          ".Typewriter__cursor"
+                        );
+                        if (cursorElement) {
+                          cursorElement.style.display = "none";
+                        }
+                      })
+                      .start();
                   }
                 }}
               />
